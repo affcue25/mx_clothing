@@ -1,0 +1,54 @@
+<?php
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_Search
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+use Mageplaza\Search\Helper\Data;
+
+/** @var $escaper Escaper */
+/** @var $block Template */
+/** @var $helper Data */
+
+$helper = $this->helper(Data::class);
+if ($helper->isEnabled() && $helper->isAlgoliaSearch()) : ?>
+    <div id="algoliaAutocomplete" class="algolia-search-block algolia-search-input">
+        <div id="mp-algoliasearch" class="mp-algoliasearch"></div>
+        <div class="autocomplete-suggestions" style="display: none"></div>
+        <?php if ($helper->getConfigGeneral('category/enable')) : ?>
+            <div class="search-category" style="position:absolute; bottom: 1px; height: auto; right: 0; width: 130px; display: none">
+                <select id="mpsearch-category">
+                    <?php foreach ($helper->getCategoryTree() as $id => $name) : ?>
+                        <option value="<?= /** @noEscape */ $id ?>"><?= /** @noEscape */ $name ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        <?php endif; ?>
+    </div>
+    <script type="text/x-magento-init">
+    {
+        "*": {
+            "algoliaCommon":{},
+            "Mageplaza_Search/js/search-suggestions":{},
+            "Mageplaza_Search/js/mpalgoliasearch": {}
+        }
+    }
+    </script>
+<?php endif; ?>

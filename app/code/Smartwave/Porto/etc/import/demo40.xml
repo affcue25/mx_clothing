@@ -1,0 +1,781 @@
+<root>
+<config>
+    <web>
+        <default>
+            <cms_home_page>porto_home_40</cms_home_page>
+            <cms_no_route>no-route-2</cms_no_route>
+        </default>
+    </web>
+    <cms>
+        <wysiwyg>
+            <enabled>hidden</enabled>
+        </wysiwyg>
+    </cms>
+    <design>
+        <header>
+            <logo_width>128</logo_width>
+            <logo_height>50</logo_height>
+            <logo_src>default/shop40_logo.png</logo_src>
+        </header>
+    </design>
+    <dev>
+        <js>
+            <merge_files>1</merge_files>
+        </js>
+    </dev>
+    <layered_navigation>
+        <general>
+            <enable>1</enable>
+        </general>
+    </layered_navigation>
+    <sw_megamenu>
+      <custom_links>
+        <staticblock_after>porto_custom_menu_33</staticblock_after>
+      </custom_links>
+    </sw_megamenu>
+    <porto_settings>
+        <general>
+            <boxed>wide</boxed>
+            <layout>1220</layout>
+            <show_site_notice>0</show_site_notice>
+            <show_site_notice_button>1</show_site_notice_button>
+            <custom_notice_day>1</custom_notice_day>
+            <custom_notice_block>porto_custom_notice17</custom_notice_block>
+            <category_list_on_left>0</category_list_on_left>
+            <smartlayers>1</smartlayers>
+            <sidebar_sticky>1</sidebar_sticky>
+        </general>
+        <header>
+            <header_type>22</header_type>
+            <header22_text><![CDATA[<div class="porto-sicon-box me-auto mb-0 d-none d-md-flex style_1 default-icon">   <div class="porto-sicon-default">     <div class="porto-just-icon-wrapper porto-icon none" style="color: #222529; font-size: 24px; margin-right: 0.25rem;display: block;"><i class="porto-icon-shipping"></i></div>   </div>   <div class="porto-sicon-header"><h3 class="porto-sicon-title" style="font-weight: 500; font-size: 0.8125rem; line-height: 1.2; letter-spacing: -0.025em;">FREE Next Day Delivery For Orders $35+</h3></div> </div>]]></header22_text>
+            <static_block_top>porto_custom_block_for_header_top</static_block_top>
+            <static_block>porto_custom_block_for_header_18</static_block>
+            <toggle_action_22>1</toggle_action_22>
+            <toggle_text_22><![CDATA[All Departments]]></toggle_text_22>
+            <secondary_menu_22>porto_secondary_menu_header_18</secondary_menu_22>
+            <static_block_22>porto_custom_block_header_bottom</static_block_22>
+            <sticky_header>1</sticky_header>
+            <sticky_header_logo>0</sticky_header_logo>
+            <mobile_sticky_header>1</mobile_sticky_header>
+            <currency_short>1</currency_short>
+            <language_flag>1</language_flag>
+        </header>
+        <footer>
+            <footer_top>0</footer_top>
+            <footer_top_block>custom</footer_top_block>
+            <footer_top_custom></footer_top_custom>
+            <footer_middle>1</footer_middle>
+            <footer_ribbon>0</footer_ribbon>
+            <footer_ribbon_text>Get in touch</footer_ribbon_text>
+            <footer_middle_column_1>custom</footer_middle_column_1>
+            <footer_middle_column_1_custom>porto_footer_logo_white</footer_middle_column_1_custom>
+            <footer_middle_column_1_size>2</footer_middle_column_1_size>
+            <footer_middle_column_2>custom</footer_middle_column_2>
+            <footer_middle_column_2_custom>footer_middle_contact_info</footer_middle_column_2_custom>
+            <footer_middle_column_2_size>3</footer_middle_column_2_size>
+            <footer_middle_column_3>custom</footer_middle_column_3>
+            <footer_middle_column_3_custom>footer_middle_customer_service</footer_middle_column_3_custom>
+            <footer_middle_column_3_size>3</footer_middle_column_3_size>
+            <footer_middle_column_4>custom</footer_middle_column_4>
+            <footer_middle_column_4_custom>footer_middle_newsletter</footer_middle_column_4_custom>
+            <footer_middle_column_4_size>4</footer_middle_column_4_size>
+            <footer_middle_2>0</footer_middle_2>
+            <footer_middle_2_column_1>custom</footer_middle_2_column_1>
+            <footer_middle_2_column_1_custom></footer_middle_2_column_1_custom>
+            <footer_middle_2_column_1_size>3</footer_middle_2_column_1_size>
+            <footer_middle_2_column_2>custom</footer_middle_2_column_2>
+            <footer_middle_2_column_2_custom></footer_middle_2_column_2_custom>
+            <footer_middle_2_column_2_size>3</footer_middle_2_column_2_size>
+            <footer_middle_2_column_3>custom</footer_middle_2_column_3>
+            <footer_middle_2_column_3_custom></footer_middle_2_column_3_custom>
+            <footer_middle_2_column_3_size>3</footer_middle_2_column_3_size>
+            <footer_middle_2_column_4>custom</footer_middle_2_column_4>
+            <footer_middle_2_column_4_custom></footer_middle_2_column_4_custom>
+            <footer_middle_2_column_4_size>3</footer_middle_2_column_4_size>
+            <footer_bottom>1</footer_bottom>
+            <footer_store_switcher>0</footer_store_switcher>
+            <footer_logo_src></footer_logo_src>
+            <footer_bottom_copyrights><![CDATA[© Porto Magento 2024. All Rights Reserved.]]></footer_bottom_copyrights>
+            <footer_bottom_custom_1></footer_bottom_custom_1>
+            <footer_bottom_custom_2>footer_bottom_block</footer_bottom_custom_2>
+        </footer>
+        <category>
+            <alternative_image>1</alternative_image>
+            <aspect_ratio>0</aspect_ratio>
+            <ratio_width>300</ratio_width>
+            <ratio_height>300</ratio_height>
+            <rating_star>1</rating_star>
+            <product_price>1</product_price>
+            <actions>1</actions>
+            <addtocompare>1</addtocompare>
+            <addtowishlist>1</addtowishlist>
+            <qty_field>0</qty_field>
+            <page_layout>2columns-left</page_layout>
+            <category_description>main_column</category_description>
+            <side_custom_block>porto_category_side_custom_block</side_custom_block>
+        </category>
+        <category_grid>
+            <product_type>3</product_type>
+            <columns>3</columns>
+            <xs_one_column>0</xs_one_column>
+            <infinite_scroller>0</infinite_scroller>
+        </category_grid>
+        <product>
+          <aspect_ratio>0</aspect_ratio>
+          <ratio_width>500</ratio_width>
+          <ratio_height>500</ratio_height>
+            <product_image_size>5</product_image_size>
+            <product_page_type></product_page_type>
+            <main_custom_block></main_custom_block>
+            <side_custom_block>porto_product_side_custom_block</side_custom_block>
+            <page_layout>1column</page_layout>
+            <upsell_columns>4</upsell_columns>
+            <move_upsell>0</move_upsell>
+            <move_upsell_full>1</move_upsell_full>
+            <move_related>1</move_related>
+            <move_related_columns>4</move_related_columns>
+            <move_addtolinks>1</move_addtolinks>
+            <tab_full_background>0</tab_full_background>
+            <custom_block_next_tab></custom_block_next_tab>
+        </product>
+        <newsletter>
+            <delay>10000</delay>
+            <logo_src>default/logo_ecomblack_lg.png</logo_src>
+            <content><![CDATA[<h3 style="font-size: 1.125rem;line-height: 1.2" class="vc_custom_heading mb-2 align-left text-uppercase">Subscribe To Newsletter</h3>
+<p style="font-size: 0.875rem;line-height: 1.8571;letter-spacing:-.02em" class="vc_custom_heading mb-4 align-left">Subscribe to the Porto mailing list to receive updates on new arrivals, special offers and our promotions.</p>]]></content>
+            <width>740px</width>
+            <height>320px</height>
+        </newsletter>
+        <contacts>
+            <enable>1</enable>
+            <full_width>0</full_width>
+            <address>Porto2 Store</address>
+            <latitude>-34.398</latitude>
+            <longitude>150.884</longitude>
+            <zoom>18</zoom>
+            <infoblock><![CDATA[<div class="row">
+<div class="col-md-12">
+    <i class="porto-icon-phone"></i>
+    <p>0201 203 2032</p>
+    <p>0201 203 2032</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+    <i class="porto-icon-mobile"></i>
+    <p>201-123-3922</p>
+    <p>302-123-3928</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+    <i class="porto-icon-mail-alt"></i>
+    <p>porto@gmail.com</p>
+    <p>porto@portotemplate.com</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+    <i class="porto-icon-skype"></i>
+    <p>porto_skype</p>
+    <p>proto_template</p>
+</div>
+</div>]]></infoblock>
+            <customblock></customblock>
+        </contacts>
+        <custom_settings>
+          <custom_google_fonts><![CDATA[@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');]]></custom_google_fonts>
+            <custom_style><![CDATA[body {
+    line-height: 25px;
+    letter-spacing: 0;
+}
+p,li {
+    letter-spacing: 0;
+    line-height: 25px;
+}
+@media (min-width: 1440px) {
+.layout-1220 .block.category.event, .layout-1220 .footer.content, .layout-1220 .header.content, .layout-1220 .navigation, .layout-1220 .page-main, .layout-1220 .page-wrapper>.breadcrumbs >ul, .layout-1220 .page-wrapper>.page-bottom, .layout-1220 .page-wrapper>.widget, .layout-1220 .top-container,.layout-1220 .container {
+    max-width: 1236px;
+}
+}
+@media (max-width: 575px){
+body {
+    font-size: 13px;
+    line-height: 21px;
+}
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: Poppins,sans-serif;
+    color: #222529;
+    letter-spacing: normal;
+}
+h1 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    margin: 0 0 32px 0;
+}
+h2 {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+    margin: 0 0 32px 0;
+}
+h3 {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 32px;
+    margin: 0 0 20px 0;
+}
+h4 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    margin: 0 0 14px 0;
+}
+h5 {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0 0 14px 0;
+}
+h6 {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0 0 14px 0;
+}
+html .heading-secondary, html .lnk-secondary, html .text-color-secondary {
+    color: #ff7272;
+}
+html .btn-modern {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+}
+html .action.primary, html .btn {
+    padding: 0.533rem 0.933rem;
+    font-size: 0.8rem;
+    line-height: 1.42857;
+    transition: color 0.15s,background-color 0.15s,border-color 0.15s,box-shadow 0.15s,transform 0.2s;
+}
+html .btn-modern {
+    font-size: .8125rem;
+    padding: 1em 2.8em;
+}
+.vc_btn3.vc_btn3-shape-rounded {
+    border-radius: .5em;
+}
+html .action.primary,html .btn.btn-primary {
+    color: var(--button-text-color);
+    background-color: var(--button-bg-color);
+    border-color: var(--button-border-color);
+}
+html .action.primary:hover,.btn-primary:hover {
+    color: var(--button-text-hover-color);
+    background-color: var(--button-bg-hover-color);
+    border-color: var(--button-border-hover-color);
+}
+html .btn-xl {
+    font-size: 1rem;
+    padding: .8rem 2rem;
+}
+.btn-modern.btn-xl {
+    font-size: 1rem;
+    padding: 1.25em 3.125em;
+}
+.btn-flat {
+    padding: 0!important;
+    background: none!important;
+    border: none!important;
+    border-bottom: 1px solid transparent!important;
+    box-shadow: none!important;
+    text-transform: uppercase;
+    font-size: .75rem;
+}
+html .btn-dark {
+    color: #fff;
+    background-color: #222529;
+    border-color: #222529 #222529 #0b0c0e;
+}
+html .btn-light {
+    color: #222529;
+    background-color: #fff;
+    border-color: #fff #fff #e6e6e6;
+}
+html .btn-quaternary {
+    color: #fff;
+    background-color: #000;
+    border-color: #000 #000 #000;
+}
+html .btn-borders {
+    border-width: 2px;
+    background: transparent;
+    padding: 0.483rem 1.0625rem;
+}
+.btn-borders.btn-light {
+    border-color: #fff;
+    color: #fff;
+}
+.btn-borders.btn-light:active, .btn-borders.btn-light:focus, .btn-borders.btn-light:hover {
+    background-color: #fff;
+    border-color: #fff;
+    color: #212529;
+}
+html .background-color-secondary {
+    background-color: #f4a085 !important;
+}
+@media (min-width: 1256px) {
+.pe-xl-5 {
+    padding-right: 3rem !important;
+}
+}
+.m-r-xl {
+    margin-right: 40px!important;
+}
+.p-t-sm {
+    padding-top: 10px!important;
+}
+.p-t-xxl {
+    padding-top: 60px!important;
+}
+.p-b-xxl {
+    padding-bottom: 60px!important;
+}
+.top-icon .porto-sicon-header {
+    margin-bottom: .75rem;
+}
+.wel-msg i {
+    font-size: 23.68px;
+    color: #4dae65;
+}
+.main-panel-top {
+    border-bottom: 1px solid #e7e7e7;
+}
+.page-header.type22 {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .06);
+}
+.page-header.type22 .panel.wrapper {
+    min-height: 56px;
+}
+.page-header.type22 .header.panel > .header.links > li {
+    padding: 0 .5rem !important;
+}
+.page-header.type22 .main-panel-top .separator {
+    height: 1.75rem;
+    border-left-color: #dadcdd;
+}
+.page-header.type22 .main-panel-top .share-links {
+    margin-left: 0 !important;
+}
+.rtl .page-header.type22 .main-panel-top .share-links {
+    margin-right: 0 !important;
+}
+.page-header.type22 .main-panel-top .share-links a {
+    margin: 0px 15px 0px 15px;
+    font-size: 1rem;
+    width: 40px;
+    height: 40px;
+    box-shadow: none;
+}
+.page-header.type22 .main-panel-top .share-links a + a:after {
+    content: '|';
+    position: absolute;
+    border-left: 1px solid #dadcdd;
+    height: 1.75rem;
+    top: 50%;
+    left: -1rem;
+    margin-left: -1px;
+    margin-top: -.875rem;
+}
+.rtl .page-header.type22 .main-panel-top .share-links a + a:after {
+    left: auto;
+    right: -1rem;
+    margin-left: 0;
+    margin-right: -1px;
+}
+.page-header.type22 .minicart-wrapper .action-subtotal {
+    display: none !important;
+}
+.page-header.type22 .header-contact .my-account i, .page-header.type22 .header-contact .wishlist i {
+    font-size: 28px;
+}
+.page-header.type22 .minicart-wrapper .action.showcart .minicart-icon {
+    font-size: 28px;
+}
+.main-toggle-menu {
+    margin-right: 30px;
+}
+.rtl .main-toggle-menu {
+    margin-right: 0;
+    margin-left: 30px;
+}
+.main-toggle-menu:not(.closed):not(.show-hover):before {
+    display: none;
+}
+.main-toggle-menu .menu-title {
+    font-size: .875rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    line-height: 1.8;
+    letter-spacing: -.025em;
+    padding: 10px 15px;
+    padding-left: 0;
+    padding-right: 0;
+    color: #222529 !important;
+    border: none;
+    background: #fff !important;
+}
+.main-toggle-menu .menu-title .toggle {
+    margin: 8px 10px 8px 0;
+}
+.rtl .main-toggle-menu .menu-title .toggle {
+    margin: 8px 0 8px 10px;
+}
+.main-toggle-menu .menu-title.closed:not(:hover) {
+    color: #222529 !important;
+}
+.main-toggle-menu .menu-title:after {
+    right: -16px;
+    font-size: 13px;
+}
+.rtl .main-toggle-menu .menu-title:after {
+    right: auto;
+    left: -16px;
+    font-size: 13px;
+}
+.main-toggle-menu .toggle-menu-wrap {
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    width: 250px;
+}
+.second-menu-block {
+    margin-left: 0 !important;
+}
+@media (min-width: 992px) {
+.text-lg-end {
+    text-align: right !important;
+}
+.text-lg-start {
+    text-align: left !important;
+}
+.page-header.type22 .header-main .header-left, .page-header.type22 .header-main .header-right, .page-header.type22 .header-main .header-center {
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+.page-header.type22:not(.sticky-header) .header-bottom {
+    border-top: none;
+    border-bottom: none;
+}
+.page-header.type22 .header-main .header-right > * {
+    margin-top: 0;
+}
+.page-header.type22 .logo {
+    margin-right: 3rem;
+}
+.rtl .page-header.type22 .logo {
+    margin-right: 0;
+    margin-left: 3rem;
+}
+.page-header.type22 .search-area .block.block-search {
+    box-shadow: none;
+}
+.page-header.type22 .search-area .block.block-search {
+    max-width: 490px;
+    margin-top: 0;
+}
+.rtl .page-header.type22 .search-area .block.block-search {
+    padding-left: 0 !important;
+}
+.page-header.type22 .block-search input {
+    height: 42px;
+    padding-right: 200px;
+}
+.rtl .page-header.type22 .block-search input {
+    padding-left: 200px;
+    padding-right: 20px;
+}
+.page-header.type22 .search-category {
+    height: 42px;
+    line-height: 42px;
+    right: 52px !important;
+}
+.rtl .page-header.type22 .search-category {
+    right: auto !important;
+    left: 52px !important;
+}
+.page-header.type22 .search-area .minisearch .actions button {
+    width: 52px;
+    height: 42px;
+    line-height: 42px;
+    background-color: #fff;
+    color: #333333;
+    border-radius: 0 5px 5px 0;
+}
+
+.page-header.type22 .custom-block {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.page-header.type22 .minicart-wrapper {
+    margin-left: 0 !important;
+}
+.page-header.type22 .navigation:not(.side-megamenu) .level0 .level-top {
+    font-weight: 600;
+    color: #222529;
+    padding: 20px 30px 20px 30px;
+}
+.page-header.type22 .navigation.side-megamenu li.level0 > a {
+    font-weight: 600;
+}
+.page-header.type22 .navigation.side-megamenu li.level0 > a i {
+    font-size: 14px;
+}
+i.size-lg {
+    font-size: 1.2em !important;
+}
+}
+@media (max-width: 991px) {
+.page-header.type22 .header-contact > *:not(:first-child) {
+    margin-left: .375rem;
+}
+.page-header.type22 .search-area.show-icon-tablet a.search-toggle-icon {
+    font-size: 23px;
+}
+}
+.page-wrapper > .breadcrumbs .items {
+    position: relative;
+    margin-bottom: 47px;
+    padding-bottom: 13px;
+    padding-top: 24px;
+}
+.page-wrapper > .breadcrumbs .items:after {
+    content: '';
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 0;
+    border-bottom: 1px solid #e7e7e7;
+}
+html .background-color-secondary {
+    background-color: #ff7272!important;
+}
+.footer, .footer p {
+    letter-spacing: 0;
+    font-size: 13px;
+}
+.footer .widgettitle, .footer .widget-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    line-height: 1;
+    letter-spacing: -.025em;
+}
+.footer-top .custom-block:before,.footer-top .custom-block:after {
+    margin-bottom: 0;
+    border: none;
+    margin-top: 0;
+}
+.footer-middle > .container {
+    padding-top: 65px;
+    padding-bottom: 14px;
+}
+.footer-middle > .container::after {
+     border-color:rgba(225,225,225,0.1);
+     margin-top: .625rem;
+     position: static;
+}
+.footer-middle > .container > .row {
+    align-items: center;
+}
+.footer-middle > .container > .row > div:not(:first-child) {
+    align-self: flex-start;
+}
+.footer .follow-us .share-links a:not(:hover) {
+    background: #fff;
+    color: #222529;
+}
+.footer .block.newsletter .form.subscribe {
+    display: block;
+}
+.footer .block.newsletter .field {
+    margin-bottom: 1rem;
+}
+.footer .newsletter input {
+    height: 48.59px;
+    border: none;
+    border-radius: 0;
+    background: #292c30;
+    padding-left: 1.5rem;
+    font-size: .8125rem;
+    border-radius: 30px;
+}
+.footer .newsletter .action.subscribe {
+    height: 48px;
+    border-radius: 30px;
+    padding: 1.25em 4.2em 1.25em 4.2em;
+    font-size: .8125rem;
+    font-weight: 700;
+    font-family: inherit;
+    letter-spacing: -0.325px;
+    margin-left: -1px;
+    border: none;
+}
+.footer .widget>div>ul li {
+    margin-bottom: 0;
+    line-height: 24px;
+}
+.footer .contact-info .contact-details strong {
+    font-weight: 600;
+    color: #888888;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -.025em;
+}
+.footer .contact-info .contact-details span {
+    padding-left: 0;
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -.03em;
+    color: #fff;
+}
+.footer .contact-info .contact-details span a {
+    color: #fff;
+}
+.footer-bottom address {
+    text-align: left;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 22px;
+}
+.footer-bottom .widget.widget_custom_html {
+    margin-bottom: 0;
+}
+.footer-bottom .custom-block.f-right, .footer-bottom address {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.footer-bottom {
+    font-size: 1em;
+    padding-bottom: 52px;
+    padding-top: 0;
+}]]></custom_style>
+            <custom_style_2><![CDATA[]]></custom_style_2>
+        </custom_settings>
+    </porto_settings>
+    <porto_design>
+        <general>
+            <theme_color>#f26100</theme_color>
+        </general>
+        <font>
+            <custom>1</custom>
+            <font_size>14px</font_size>
+            <font_family>google</font_family>
+            <custom_font_family></custom_font_family>
+            <google_font_family>Poppins</google_font_family>
+            <char_latin_ext></char_latin_ext>
+            <char_subset></char_subset>
+        </font>
+        <colors>
+            <custom>1</custom>
+            <text_color></text_color>
+            <link_color></link_color>
+            <link_hover_color></link_hover_color>
+            <button_bg_color>#f26100</button_bg_color>
+            <button_text_color>#FFF</button_text_color>
+            <button_hover_bg_color>#ff7d27</button_hover_bg_color>
+            <button_hover_text_color>#FFF</button_hover_text_color>
+            <breadcrumbs_bg_color>FFFFFF</breadcrumbs_bg_color>
+            <breadcrumbs_color>#8e8e8e</breadcrumbs_color>
+            <breadcrumbs_links_color>#8e8e8e</breadcrumbs_links_color>
+            <breadcrumbs_links_hover_color>#8e8e8e</breadcrumbs_links_hover_color>
+            <sale_bg_color></sale_bg_color>
+            <sale_font_color></sale_font_color>
+            <new_bg_color></new_bg_color>
+            <new_font_color></new_font_color>
+            <price_slider_bg_color>#eee</price_slider_bg_color>
+            <price_slider_handle_color>#f26100</price_slider_handle_color>
+        </colors>
+        <header>
+            <custom>1</custom>
+            <notice_bgcolor>dark</notice_bgcolor>
+            <notice_text_color>light</notice_text_color>
+            <header_bgcolor></header_bgcolor>
+            <header_bg_image></header_bg_image>
+            <header_bordercolor></header_bordercolor>
+            <header_textcolor>#222529</header_textcolor>
+            <header_linkcolor>#222529</header_linkcolor>
+            <header_top_links_bgcolor>#fff</header_top_links_bgcolor>
+            <header_top_links_color>#222529</header_top_links_color>
+            <header_menu_bgcolor>#fff</header_menu_bgcolor>
+            <header_menu_color>#222529</header_menu_color>
+            <header_menu_hover_bgcolor>#fff</header_menu_hover_bgcolor>
+            <header_menu_hover_color>#f26100</header_menu_hover_color>
+            <header_sidemenu_color>#222529</header_sidemenu_color>
+            <header_sidemenu_hover_bgcolor>#fff</header_sidemenu_hover_bgcolor>
+            <header_sidemenu_hover_color>#f26100</header_sidemenu_hover_color>
+            <header_menu_classicmenu_bgcolor></header_menu_classicmenu_bgcolor>
+            <header_menu_classicmenu_bordercolor></header_menu_classicmenu_bordercolor>
+            <header_menu_classicmenu_color>#696969</header_menu_classicmenu_color>
+            <header_menu_classicmenu_hover_bgcolor>#f4f4f4</header_menu_classicmenu_hover_bgcolor>
+            <header_menu_classicmenu_hover_color>#696969</header_menu_classicmenu_hover_color>
+            <header_menu_megamenu_bgcolor></header_menu_megamenu_bgcolor>
+            <header_menu_megamenu_bordercolor></header_menu_megamenu_bordercolor>
+            <header_menu_megamenu_color>#696969</header_menu_megamenu_color>
+            <header_menu_megamenu_hover_color>#696969</header_menu_megamenu_hover_color>
+            <header_search_bgcolor>#fff</header_search_bgcolor>
+            <header_search_text_color>#555555</header_search_text_color>
+            <header_search_bordercolor>#e7e7e7</header_search_bordercolor>
+            <header_minicart_design>1</header_minicart_design>
+            <header_minicart_popup_design>2</header_minicart_popup_design>
+            <header_minicart_color>#FFFFFF</header_minicart_color>
+            <header_minicart_icon_color>#282d3b</header_minicart_icon_color>
+        </header>
+        <footer>
+            <custom>1</custom>
+            <footer_top_bgcolor></footer_top_bgcolor>
+            <footer_top_color></footer_top_color>
+            <footer_top_link_color></footer_top_link_color>
+            <footer_top_link_hover_color></footer_top_link_hover_color>
+            <footer_middle_bgcolor>#212529</footer_middle_bgcolor>
+            <footer_middle_color>#777</footer_middle_color>
+            <footer_middle_link_color>#777</footer_middle_link_color>
+            <footer_middle_link_hover_color>#fff</footer_middle_link_hover_color>
+            <footer_middle_title_color>#fff</footer_middle_title_color>
+            <footer_middle_links_icon_color>#777</footer_middle_links_icon_color>
+            <footer_middle_ribbon_bgcolor>#f26100</footer_middle_ribbon_bgcolor>
+            <footer_middle_ribbon_shadow_color>#f26100</footer_middle_ribbon_shadow_color>
+            <footer_middle_ribbon_color>FFFFFF</footer_middle_ribbon_color>
+            <footer_middle_2_bgcolor></footer_middle_2_bgcolor>
+            <footer_middle_2_color></footer_middle_2_color>
+            <footer_middle_2_link_color></footer_middle_2_link_color>
+            <footer_middle_2_link_hover_color></footer_middle_2_link_hover_color>
+            <footer_middle_2_title_color></footer_middle_2_title_color>
+            <footer_middle_2_links_icon_color></footer_middle_2_links_icon_color>
+            <footer_bottom_bgcolor>#212529</footer_bottom_bgcolor>
+            <footer_bottom_color>#777</footer_bottom_color>
+            <footer_bottom_link_color>#777</footer_bottom_link_color>
+            <footer_bottom_link_hover_color>#f26100</footer_bottom_link_hover_color>
+        </footer>
+        <page>
+            <custom>0</custom>
+            <page_bgcolor></page_bgcolor>
+            <page_bg_image></page_bg_image>
+            <page_custom_style><![CDATA[]]></page_custom_style>
+        </page>
+        <main>
+            <custom>0</custom>
+            <main_bgcolor></main_bgcolor>
+            <main_bg_image></main_bg_image>
+            <main_custom_style><![CDATA[]]></main_custom_style>
+        </main>
+    </porto_design>
+    <mpsearch>
+        <general>
+            <enabled>1</enabled>
+        </general>
+    </mpsearch>
+</config>
+</root>

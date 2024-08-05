@@ -1,0 +1,46 @@
+<?php
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_Search
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+?>
+
+<script type="text/template" id="instant-hit-template">
+    {{#name}}
+    <div class="result-wrapper" itemprop="item">
+        <a class="result" href="{{url}}">
+            <div class="result-content">
+                <div class="result-thumbnail">
+                    {{#image}}<img itemprop="image" src="{{image}}" alt="{{name}}" />{{/image}}
+                    {{^image}}<span class="no-image"></span>{{/image}}
+                </div>
+                <div class="result-sub-content">
+                    <div class="product-line product-name">
+                        {{name}}
+                    </div>
+                    <div class="product-line product-price">
+                        Price: {{price}}
+                    </div>
+                    <div class="result-description text-ellipsis">{{description}}</div>
+                </div>
+            </div>
+            <div class="algolia-clearfix"></div>
+        </a>
+    </div>
+    {{/name}}
+</script>

@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="smartwave_filterproducts_grid" class="Smartwave\Filterproducts\Block\Widget\Products" is_email_compatible="true" placeholder_image="Magento_Catalog::images/product_widget_new.png" ttl="86400">
+        <label translate="true">Porto Filter Products Grid List</label>
+        <description translate="true">List of Products that are set as Filter</description>
+
+        <parameters>
+            <parameter name="layout_type" xsi:type="select" required="true" visible="true">
+                <label translate="true">Layout Type</label>
+                <options>
+                    <option name="grid" value="grid" selected="true">
+                        <label translate="true">Products Grid Layout</label>
+                    </option>
+                    <option name="masonry_grid" value="masonry_grid">
+                        <label translate="true">Products Masonry Grid Layout</label>
+                    </option>
+                    <option name="small_list" value="small_list">
+                        <label translate="true">Products Small List Layout</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="display_type" xsi:type="select" required="true" visible="true">
+                <label translate="true">Display Type</label>
+                <description translate="true">Filter Product By Type</description>
+                <options>
+                    <option name="latest" value="latest_products" selected="true">
+                        <label translate="true">Latest products</label>
+                    </option>
+                    <option name="new" value="new_products">
+                        <label translate="true">New products</label>
+                    </option>
+                    <option name="featured" value="featured_products">
+                        <label translate="true">Featured products</label>
+                    </option>
+                    <option name="bestseller" value="bestseller_products">
+                        <label translate="true">Bestseller products</label>
+                    </option>
+                    <option name="sale" value="sale_products">
+                        <label translate="true">Sale products</label>
+                    </option>
+                    <option name="deal" value="deal_products">
+                        <label translate="true">Deal products</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="masonry_layout" xsi:type="select" required="true" visible="true">
+                <label translate="true">Masonry Type Layout</label>
+                <description translate="true">Use only for template Masonry Layout Grid</description>
+                <depends>
+                    <parameter name="layout_type" value="masonry_grid"></parameter>
+                </depends>
+                <options>
+                    <option name="1" value="1" selected="true">
+                        <label translate="true">Type 1</label>
+                    </option>
+                    <option name="2" value="2">
+                        <label translate="true">Type 2</label>
+                    </option>
+                    <option name="3" value="3">
+                        <label translate="true">Type 3</label>
+                    </option>
+                    <option name="4" value="4">
+                        <label translate="true">Type 4</label>
+                    </option>
+                    <option name="5" value="5">
+                        <label translate="true">Type 5</label>
+                    </option>
+                    <option name="6" value="6">
+                        <label translate="true">Type 6</label>
+                    </option>
+                    <option name="7" value="7">
+                        <label translate="true">Type 7</label>
+                    </option>
+                    <option name="8" value="8">
+                        <label translate="true">Type 8</label>
+                    </option>
+                    <option name="9" value="9">
+                        <label translate="true">Type 9</label>
+                    </option>
+                    <option name="10" value="10">
+                        <label translate="true">Type 10</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="product_type" xsi:type="select" required="true" visible="true">
+                <label translate="true">Product Type Layout</label>
+                <depends>
+                    <parameter name="layout_type" value="grid"></parameter>
+                </depends>
+                <options>
+                    <option name="1" value="1" selected="true">
+                        <label translate="true">Type 1</label>
+                    </option>
+                    <option name="2" value="2">
+                        <label translate="true">Type 2</label>
+                    </option>
+                    <option name="3" value="3">
+                        <label translate="true">Type 3</label>
+                    </option>
+                    <option name="4" value="4">
+                        <label translate="true">Type 4</label>
+                    </option>
+                    <option name="5" value="5">
+                        <label translate="true">Type 5</label>
+                    </option>
+                    <option name="6" value="6">
+                        <label translate="true">Type 6</label>
+                    </option>
+                    <option name="7" value="7">
+                        <label translate="true">Type 7</label>
+                    </option>
+                    <option name="8" value="8">
+                        <label translate="true">Type 8</label>
+                    </option>
+                    <option name="9" value="9">
+                        <label translate="true">Type 9</label>
+                    </option>
+                    <option name="10" value="10">
+                        <label translate="true">Type 10</label>
+                    </option>
+                    <option name="11" value="11">
+                        <label translate="true">Type 11</label>
+                    </option>
+                    <option name="12" value="12">
+                        <label translate="true">Type 12</label>
+                    </option>
+                    <option name="13" value="13">
+                        <label translate="true">Type 13</label>
+                    </option>
+                    <option name="14" value="14">
+                        <label translate="true">Type 14</label>
+                    </option>
+                    <option name="15" value="15">
+                        <label translate="true">Type 15</label>
+                    </option>
+                    <option name="16" value="16">
+                        <label translate="true">Type 16</label>
+                    </option>
+                    <option name="17" value="17">
+                        <label translate="true">Type 17</label>
+                    </option>
+                    <option name="18" value="18">
+                        <label translate="true">Type 18</label>
+                    </option>
+                    <option name="19" value="19">
+                        <label translate="true">Type 19</label>
+                    </option>
+                    <option name="20" value="20">
+                        <label translate="true">Type 20</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="product_masonry_type" xsi:type="select" required="true" visible="true">
+                <label translate="true">Product Type Layout</label>
+                <depends>
+                    <parameter name="layout_type" value="masonry_grid"></parameter>
+                </depends>
+                <options>
+                    <option name="1" value="1" selected="true">
+                        <label translate="true">Type 1</label>
+                    </option>
+                    <option name="2" value="2">
+                        <label translate="true">Type 2</label>
+                    </option>
+                    <option name="3" value="3">
+                        <label translate="true">Type 3</label>
+                    </option> 
+                </options>
+            </parameter>
+            <parameter name="product_content_pos1" xsi:type="select" visible="true">
+                <label translate="true">Products Content Position</label>
+                <depends>
+                    <parameter name="product_type" value="13"></parameter>
+                </depends>
+                <options>
+                    <option name="left" value="left" selected="true">
+                        <label translate="true">Left</label>
+                    </option>
+                    <option name="center" value="center">
+                        <label translate="true">Center</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="product_button_pos" xsi:type="select" visible="true">
+                <label translate="true">Products Button Position</label>
+                <depends>
+                    <parameter name="product_type" value="14"></parameter>
+                </depends>
+                <options>
+                    <option name="top" value="top" selected="true">
+                        <label translate="true">Top</label>
+                    </option>
+                    <option name="center" value="center">
+                        <label translate="true">Center</label>
+                    </option>
+                    <option name="bottom" value="bottom">
+                        <label translate="true">Bottom</label>
+                    </option>
+                    <option name="outside" value="outside">
+                        <label translate="true">Outside</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="product_icon_only1" xsi:type="select" visible="true">
+                <label translate="true">Products Actions Use icon only</label>
+                <depends>
+                    <parameter name="product_type" value="14"></parameter>
+                </depends>
+                <options>
+                    <option name="0" value="0" selected="true">
+                        <label translate="true">No</label>
+                    </option>
+                    <option name="1" value="1">
+                        <label translate="true">Yes</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="product_button_action" xsi:type="select" visible="true">
+                <label translate="true">Products Button Actions Position</label>
+                <depends>
+                    <parameter name="product_type" value="15"></parameter>
+                </depends>
+                <options>
+                    <option name="top" value="top" selected="true">
+                        <label translate="true">Top</label>
+                    </option>
+                    <option name="center" value="center">
+                        <label translate="true">Center</label>
+                    </option>
+                    <option name="hide" value="hide">
+                        <label translate="true">Hide</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="product_icon_only2" xsi:type="select" visible="true">
+                <label translate="true">Products Actions Use icon only</label>
+                <depends>
+                    <parameter name="product_type" value="15"></parameter>
+                </depends>
+                <options>
+                    <option name="0" value="0" selected="true">
+                        <label translate="true">No</label>
+                    </option>
+                    <option name="1" value="1">
+                        <label translate="true">Yes</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="product_content_pos3" xsi:type="select" visible="true">
+                <label translate="true">Products Content Position</label>
+                <depends>
+                    <parameter name="product_type" value="16"></parameter>
+                </depends>
+                <options>
+                    <option name="left" value="left" selected="true">
+                        <label translate="true">Left</label>
+                    </option>
+                    <option name="center" value="center">
+                        <label translate="true">Center</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="product_block_pos" xsi:type="select" visible="true">
+                <label translate="true">Products Content Block Position</label>
+                <depends>
+                    <parameter name="product_type" value="16"></parameter>
+                </depends>
+                <options>
+                    <option name="default" value="default" selected="true">
+                        <label translate="true">Default</label>
+                    </option>
+                    <option name="center" value="center">
+                        <label translate="true">Center</label>
+                    </option>
+                    <option name="full" value="full">
+                        <label translate="true">Full</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="product_quantity_pos" xsi:type="select" visible="true">
+                <label translate="true">Products Quantity Position</label>
+                <depends>
+                    <parameter name="product_type" value="17"></parameter>
+                </depends>
+                <options>
+                    <option name="below" value="below" selected="true">
+                        <label translate="true">Below Info</label>
+                    </option>
+                    <option name="above" value="above">
+                        <label translate="true">Above Info</label>
+                    </option>
+                    <option name="image_bottom" value="image_bottom">
+                        <label translate="true">Image Bottom</label>
+                    </option>
+                    <option name="image_center" value="image_center">
+                        <label translate="true">Image Center</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="product_content_pos2" xsi:type="select" visible="true">
+                <label translate="true">Products Content Position</label>
+                <depends>
+                    <parameter name="product_type" value="18"></parameter>
+                </depends>
+                <options>
+                    <option name="default" value="default" selected="true">
+                        <label translate="true">Default</label>
+                    </option>
+                    <option name="center" value="center">
+                        <label translate="true">Center</label>
+                    </option>
+                    <option name="top" value="top">
+                        <label translate="true">Top</label>
+                    </option>
+                    <option name="bottom" value="bottom">
+                        <label translate="true">Bottom</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="product_link_pos" xsi:type="select" visible="true">
+                <label translate="true">Products Link Action Position</label>
+                <depends>
+                    <parameter name="product_type" value="19"></parameter>
+                </depends>
+                <options>
+                    <option name="default" value="default" selected="true">
+                        <label translate="true">default</label>
+                    </option>
+                    <option name="image" value="image">
+                        <label translate="true">Link On Image</label>
+                    </option>
+                    <option name="top" value="top">
+                        <label translate="true">Link Always Visible Before Text</label>
+                    </option>
+                    <option name="hidden" value="hidden">
+                        <label translate="true">Hidden</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="product_box_style" xsi:type="select" visible="true">
+                <label translate="true">Products Link Action Position</label>
+                <depends>
+                    <parameter name="product_type" value="20"></parameter>
+                </depends>
+                <options>
+                    <option name="box_shadow" value="box_shadow" selected="true">
+                        <label translate="true">Box Shadow</label>
+                    </option>
+                    <option name="box_full" value="box_full">
+                        <label translate="true">Box Shadow Full Details</label>
+                    </option>
+                    <option name="box_border" value="box_border">
+                        <label translate="true">Box Border</label>
+                    </option>
+                    <option name="box_border_padding" value="box_border_padding">
+                        <label translate="true">Box Border With Padding</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="category_ids" xsi:type="block" visible="true" required="false">
+                <label translate="true">Category</label>
+                <block class="Magento\Catalog\Block\Adminhtml\Category\Widget\Chooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string" translate="true">Select Category...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+            <parameter name="show_pager" xsi:type="select" visible="true">
+                <label translate="true">Display Page Control</label>
+                <options>
+                    <option name="0" value="0" selected="true">
+                        <label translate="true">No</label>
+                    </option>
+                    <option name="1" value="1">
+                        <label translate="true">Yes</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="products_per_page" xsi:type="text" required="true" visible="true">
+                <label translate="true">Number of Products per Page</label>
+                <depends>
+                    <parameter name="show_pager" value="1" />
+                </depends>
+                <value>5</value>
+            </parameter>
+            <parameter name="product_count" xsi:type="text" required="true" visible="true">
+                <label translate="true">Number of Products to Display</label>
+                <value>4</value>
+            </parameter>
+            <parameter name="column_count" xsi:type="select" visible="true">
+                <label translate="true">Columns Count</label>
+                <description translate="true">Use only for template Grid Layout</description>
+                <depends>
+                    <parameter name="layout_type" value="grid"></parameter>
+                </depends>
+                <options>
+                    <option name="1" value="1">
+                        <label translate="true">1 Column</label>
+                    </option>
+                    <option name="2" value="2">
+                        <label translate="true">2 Columns</label>
+                    </option>
+                    <option name="3" value="3" selected="true">
+                        <label translate="true">3 Columns</label>
+                    </option>
+                    <option name="4" value="4">
+                        <label translate="true">4 Columns</label>
+                    </option>
+                    <option name="5" value="5">
+                        <label translate="true">5 Columns</label>
+                    </option>
+                    <option name="6" value="6">
+                        <label translate="true">6 Columns</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="cache_lifetime" xsi:type="text" visible="true">
+                <label translate="true">Cache Lifetime (Seconds)</label>
+                <description translate="true">
+                    <![CDATA[Time in seconds between the widget updates.
+                    <br/>If not set, equals to 86400 seconds (24 hours). To update widget instantly, go to Cache Management and clear Blocks HTML Output cache.
+                    <br/>Widget will not show products that begin to match the specified conditions until cache is refreshed.]]>
+                </description>
+            </parameter>
+        </parameters>
+        <containers>
+            <container name="sidebar.main">
+              <template name="small_list" value="small_list" />
+            </container>
+            <container name="content">
+                <template name="grid" value="grid" />
+                <template name="masonry_grid" value="masonry_grid" />
+                <template name="small_list" value="small_list" />
+            </container>
+            <container name="sidebar.additional">
+              <template name="small_list" value="small_list" />
+            </container>
+        </containers>
+    </widget>
+    <widget id="smartwave_filterproducts_carousel"
+            class="Smartwave\Filterproducts\Block\Widget\Carousel"
+            is_email_compatible="true"
+            placeholder_image="Magento_Catalog::images/product_widget_new.png">
+        <label translate="true">Porto Filter Products Carousel List</label>
+        <description translate="true">List of Products that are set as Filter Carousel Layout</description>
+        <parameters>
+          <parameter name="layout_type" xsi:type="select" required="true" visible="true">
+              <label translate="true">Layout Type</label>
+              <options>
+                  <option name="owl_list" value="owl_list" selected="true">
+                      <label translate="true">Products Carousel List Layout</label>
+                  </option>
+                  <option name="side_list" value="side_list">
+                      <label translate="true">Products Carousel Side List Layout</label>
+                  </option>
+              </options>
+          </parameter>
+          <parameter name="display_type" xsi:type="select" required="true" visible="true">
+              <label translate="true">Display Type</label>
+              <description translate="true">Filter Product By Type</description>
+              <options>
+                  <option name="latest" value="latest_products" selected="true">
+                      <label translate="true">Latest products</label>
+                  </option>
+                  <option name="new" value="new_products">
+                      <label translate="true">New products</label>
+                  </option>
+                  <option name="featured" value="featured_products">
+                      <label translate="true">Featured products</label>
+                  </option>
+                  <option name="bestseller" value="bestseller_products">
+                      <label translate="true">Bestseller products</label>
+                  </option>
+                  <option name="sale" value="sale_products">
+                      <label translate="true">Sale products</label>
+                  </option>
+                  <option name="deal" value="deal_products">
+                      <label translate="true">Deal products</label>
+                  </option>
+              </options>
+          </parameter>
+
+          <parameter name="product_type" xsi:type="select" required="true" visible="true">
+              <label translate="true">Product Type Layout</label>
+              <depends>
+                  <parameter name="layout_type" value="owl_list"></parameter>
+              </depends>
+              <options>
+                  <option name="1" value="1" selected="true">
+                      <label translate="true">Type 1</label>
+                  </option>
+                  <option name="2" value="2">
+                      <label translate="true">Type 2</label>
+                  </option>
+                  <option name="3" value="3">
+                      <label translate="true">Type 3</label>
+                  </option>
+                  <option name="4" value="4">
+                      <label translate="true">Type 4</label>
+                  </option>
+                  <option name="5" value="5">
+                      <label translate="true">Type 5</label>
+                  </option>
+                  <option name="6" value="6">
+                      <label translate="true">Type 6</label>
+                  </option>
+                  <option name="7" value="7">
+                      <label translate="true">Type 7</label>
+                  </option>
+                  <option name="8" value="8">
+                      <label translate="true">Type 8</label>
+                  </option>
+                  <option name="9" value="9">
+                      <label translate="true">Type 9</label>
+                  </option>
+                  <option name="10" value="10">
+                      <label translate="true">Type 10</label>
+                  </option>
+                  <option name="11" value="11">
+                      <label translate="true">Type 11</label>
+                  </option>
+                  <option name="12" value="12">
+                      <label translate="true">Type 12</label>
+                  </option>
+                  <option name="13" value="13">
+                      <label translate="true">Type 13</label>
+                  </option>
+                  <option name="14" value="14">
+                      <label translate="true">Type 14</label>
+                  </option>
+                  <option name="15" value="15">
+                      <label translate="true">Type 15</label>
+                  </option>
+                  <option name="16" value="16">
+                      <label translate="true">Type 16</label>
+                  </option>
+                  <option name="17" value="17">
+                      <label translate="true">Type 17</label>
+                  </option>
+                  <option name="18" value="18">
+                      <label translate="true">Type 18</label>
+                  </option>
+                  <option name="19" value="19">
+                      <label translate="true">Type 19</label>
+                  </option>
+                  <option name="20" value="20">
+                      <label translate="true">Type 20</label>
+                  </option>
+              </options>
+          </parameter>
+          <parameter name="product_content_pos1" xsi:type="select" visible="true">
+              <label translate="true">Products Content Position</label>
+              <depends>
+                  <parameter name="product_type" value="13"></parameter>
+              </depends>
+              <options>
+                  <option name="left" value="left" selected="true">
+                      <label translate="true">Left</label>
+                  </option>
+                  <option name="center" value="center">
+                      <label translate="true">Center</label>
+                  </option>
+              </options>
+          </parameter>
+          <parameter name="product_button_pos" xsi:type="select" visible="true">
+              <label translate="true">Products Button Position</label>
+              <depends>
+                  <parameter name="product_type" value="14"></parameter>
+              </depends>
+              <options>
+                  <option name="top" value="top" selected="true">
+                      <label translate="true">Top</label>
+                  </option>
+                  <option name="center" value="center">
+                      <label translate="true">Center</label>
+                  </option>
+                  <option name="bottom" value="bottom">
+                      <label translate="true">Bottom</label>
+                  </option>
+                  <option name="outside" value="outside">
+                      <label translate="true">Outside</label>
+                  </option>
+              </options>
+          </parameter>
+          <parameter name="product_icon_only1" xsi:type="select" visible="true">
+              <label translate="true">Products Actions Use icon only</label>
+              <depends>
+                  <parameter name="product_type" value="14"></parameter>
+              </depends>
+              <options>
+                  <option name="0" value="0" selected="true">
+                      <label translate="true">No</label>
+                  </option>
+                  <option name="1" value="1">
+                      <label translate="true">Yes</label>
+                  </option>
+              </options>
+          </parameter>
+          <parameter name="product_button_action" xsi:type="select" visible="true">
+              <label translate="true">Products Button Actions Position</label>
+              <depends>
+                  <parameter name="product_type" value="15"></parameter>
+              </depends>
+              <options>
+                  <option name="top" value="top" selected="true">
+                      <label translate="true">Top</label>
+                  </option>
+                  <option name="center" value="center">
+                      <label translate="true">Center</label>
+                  </option>
+                  <option name="hide" value="hide">
+                      <label translate="true">Hide</label>
+                  </option>
+              </options>
+          </parameter>
+          <parameter name="product_icon_only2" xsi:type="select" visible="true">
+              <label translate="true">Products Actions Use icon only</label>
+              <depends>
+                  <parameter name="product_type" value="15"></parameter>
+              </depends>
+              <options>
+                  <option name="0" value="0" selected="true">
+                      <label translate="true">No</label>
+                  </option>
+                  <option name="1" value="1">
+                      <label translate="true">Yes</label>
+                  </option>
+              </options>
+          </parameter>
+          <parameter name="product_content_pos3" xsi:type="select" visible="true">
+              <label translate="true">Products Content Position</label>
+              <depends>
+                  <parameter name="product_type" value="16"></parameter>
+              </depends>
+              <options>
+                  <option name="left" value="left" selected="true">
+                      <label translate="true">Left</label>
+                  </option>
+                  <option name="center" value="center">
+                      <label translate="true">Center</label>
+                  </option>
+              </options>
+          </parameter>
+          <parameter name="product_block_pos" xsi:type="select" visible="true">
+              <label translate="true">Products Content Block Position</label>
+              <depends>
+                  <parameter name="product_type" value="16"></parameter>
+              </depends>
+              <options>
+                  <option name="default" value="default" selected="true">
+                      <label translate="true">Default</label>
+                  </option>
+                  <option name="center" value="center">
+                      <label translate="true">Center</label>
+                  </option>
+                  <option name="full" value="full">
+                      <label translate="true">Full</label>
+                  </option>
+              </options>
+          </parameter>
+          <parameter name="product_quantity_pos" xsi:type="select" visible="true">
+              <label translate="true">Products Quantity Position</label>
+              <depends>
+                  <parameter name="product_type" value="17"></parameter>
+              </depends>
+              <options>
+                  <option name="below" value="below" selected="true">
+                      <label translate="true">Below Info</label>
+                  </option>
+                  <option name="above" value="above">
+                      <label translate="true">Above Info</label>
+                  </option>
+                  <option name="image_bottom" value="image_bottom">
+                      <label translate="true">Image Bottom</label>
+                  </option>
+                  <option name="image_center" value="image_center">
+                      <label translate="true">Image Center</label>
+                  </option>
+              </options>
+          </parameter>
+          <parameter name="product_content_pos2" xsi:type="select" visible="true">
+              <label translate="true">Products Content Position</label>
+              <depends>
+                  <parameter name="product_type" value="18"></parameter>
+              </depends>
+              <options>
+                  <option name="default" value="default" selected="true">
+                      <label translate="true">Default</label>
+                  </option>
+                  <option name="center" value="center">
+                      <label translate="true">Center</label>
+                  </option>
+                  <option name="top" value="top">
+                      <label translate="true">Top</label>
+                  </option>
+                  <option name="bottom" value="bottom">
+                      <label translate="true">Bottom</label>
+                  </option>
+              </options>
+          </parameter>
+          <parameter name="product_link_pos" xsi:type="select" visible="true">
+              <label translate="true">Products Link Action Position</label>
+              <depends>
+                  <parameter name="product_type" value="19"></parameter>
+              </depends>
+              <options>
+                  <option name="default" value="default" selected="true">
+                      <label translate="true">default</label>
+                  </option>
+                  <option name="image" value="image">
+                      <label translate="true">Link On Image</label>
+                  </option>
+                  <option name="top" value="top">
+                      <label translate="true">Link Always Visible Before Text</label>
+                  </option>
+                  <option name="hidden" value="hidden">
+                      <label translate="true">Hidden</label>
+                  </option>
+              </options>
+          </parameter>
+          <parameter name="product_box_style" xsi:type="select" visible="true">
+              <label translate="true">Products Link Action Position</label>
+              <depends>
+                  <parameter name="product_type" value="20"></parameter>
+              </depends>
+              <options>
+                  <option name="box_shadow" value="box_shadow" selected="true">
+                      <label translate="true">Box Shadow</label>
+                  </option>
+                  <option name="box_full" value="box_full">
+                      <label translate="true">Box Shadow Full Details</label>
+                  </option>
+                  <option name="box_border" value="box_border">
+                      <label translate="true">Box Border</label>
+                  </option>
+                  <option name="box_border_padding" value="box_border_padding">
+                      <label translate="true">Box Border With Padding</label>
+                  </option>
+              </options>
+          </parameter>
+          <parameter name="category_ids" xsi:type="block" visible="true" required="false">
+              <label translate="true">Category</label>
+              <block class="Magento\Catalog\Block\Adminhtml\Category\Widget\Chooser">
+                  <data>
+                      <item name="button" xsi:type="array">
+                          <item name="open" xsi:type="string" translate="true">Select Category...</item>
+                      </item>
+                  </data>
+              </block>
+          </parameter>
+          <parameter name="product_count" xsi:type="text" required="true" visible="true">
+              <label translate="true">Number of Products to Display</label>
+              <value>10</value>
+          </parameter>
+          <parameter name="enable_autoplay" xsi:type="select" visible="true"
+                     source_model="Magento\Config\Model\Config\Source\Yesno">
+              <label translate="true">Enable Autoplay</label>
+          </parameter>
+          <parameter name="show_slide_nav" xsi:type="select" visible="true"
+                     source_model="Magento\Config\Model\Config\Source\Yesno">
+              <label translate="true">Show Arrows</label>
+          </parameter>
+          <parameter name="show_slide_page" xsi:type="select" visible="true"
+                     source_model="Magento\Config\Model\Config\Source\Yesno">
+              <label translate="true">Show Dots</label>
+          </parameter>
+          <parameter name="enable_slide_loop" xsi:type="select" visible="true"
+                     source_model="Magento\Config\Model\Config\Source\Yesno">
+              <label translate="true">Enable Slide Loop</label>
+          </parameter>
+          <parameter name="desktop_slide_columns" xsi:type="select" required="true" visible="true">
+              <label translate="true">Desktop Columns Count</label>
+              <depends>
+                  <parameter name="layout_type" value="owl_list"></parameter>
+              </depends>
+              <options>
+                  <option name="1" value="1">
+                      <label translate="true">1 Column</label>
+                  </option>
+                  <option name="2" value="2">
+                      <label translate="true">2 Columns</label>
+                  </option>
+                  <option name="3" value="3">
+                      <label translate="true">3 Columns</label>
+                  </option>
+                  <option name="4" value="4" selected="true">
+                      <label translate="true">4 Columns</label>
+                  </option>
+                  <option name="5" value="5">
+                      <label translate="true">5 Columns</label>
+                  </option>
+                  <option name="6" value="6">
+                      <label translate="true">6 Columns</label>
+                  </option>
+              </options>
+          </parameter>
+          <parameter name="tablet_slide_columns" xsi:type="select" required="true" visible="true">
+              <label translate="true">Tablet Columns Count</label>
+              <depends>
+                  <parameter name="layout_type" value="owl_list"></parameter>
+              </depends>
+              <options>
+                  <option name="1" value="1">
+                      <label translate="true">1 Column</label>
+                  </option>
+                  <option name="2" value="2">
+                      <label translate="true">2 Columns</label>
+                  </option>
+                  <option name="3" value="3" selected="true">
+                      <label translate="true">3 Columns</label>
+                  </option>
+                  <option name="4" value="4">
+                      <label translate="true">4 Columns</label>
+                  </option>
+                  <option name="5" value="5">
+                      <label translate="true">5 Columns</label>
+                  </option>
+                  <option name="6" value="6">
+                      <label translate="true">6 Columns</label>
+                  </option>
+              </options>
+          </parameter>
+          <parameter name="mobile_slide_columns" xsi:type="select" required="true" visible="true">
+              <label translate="true">Mobile Columns Count</label>
+              <depends>
+                  <parameter name="layout_type" value="owl_list"></parameter>
+              </depends>
+              <options>
+                  <option name="1" value="1">
+                      <label translate="true">1 Column</label>
+                  </option>
+                  <option name="2" value="2" selected="true">
+                      <label translate="true">2 Columns</label>
+                  </option>
+                  <option name="3" value="3">
+                      <label translate="true">3 Columns</label>
+                  </option>
+                  <option name="4" value="4">
+                      <label translate="true">4 Columns</label>
+                  </option>
+                  <option name="5" value="5">
+                      <label translate="true">5 Columns</label>
+                  </option>
+                  <option name="6" value="6">
+                      <label translate="true">6 Columns</label>
+                  </option>
+              </options>
+          </parameter>
+          <parameter name="extra_class" xsi:type="text" visible="true">
+              <label translate="true">Extra Class</label>
+              <description translate="true">
+                  <![CDATA[Add custom class html to template. <br>Ex: nav-center-images-only nav-pos-outside nav-style-4 show-nav-hover dots-style-1]]>
+              </description>
+              <value>nav-center-images-only nav-pos-outside nav-style-4 show-nav-hover dots-style-1</value>
+          </parameter>
+          <parameter name="cache_lifetime" xsi:type="text" visible="true">
+              <label translate="true">Cache Lifetime (Seconds)</label>
+              <description translate="true">
+                  <![CDATA[Time in seconds between the widget updates.
+                  <br/>If not set, equals to 86400 seconds (24 hours). To update widget instantly, go to Cache Management and clear Blocks HTML Output cache.
+                  <br/>Widget will not show products that begin to match the specified conditions until cache is refreshed.]]>
+              </description>
+          </parameter>
+        </parameters>
+        <containers>
+            <container name="sidebar.main">
+              <template name="side_list" value="side_list" />
+            </container>
+            <container name="content">
+                <template name="owl_list" value="owl_list" />
+            </container>
+            <container name="sidebar.additional">
+              <template name="side_list" value="side_list" />
+            </container>
+        </containers>
+    </widget>
+</widgets>

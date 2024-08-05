@@ -1,0 +1,19 @@
+<?php
+$_portohelper = $this->helper('Smartwave\Porto\Helper\Data');
+if($_portohelper->getCurrentProduct() || $_portohelper->getCurrentCategory()){
+    echo $this->getCategorySidebarHtml();
+}
+?>
+<script type="text/javascript">
+require(['jquery', 'jquery/ui'], function($){
+  var path = window.location.href; 
+  $(".category-sidebar li a").each(function() {
+    if (this.href === path) {
+      $(this).parent().addClass('active');
+    }
+    if (this.href === path && $(this).parent().hasClass('parent')) {
+      $(this).parents('.parent').addClass('active');
+    }
+  });
+});
+</script>

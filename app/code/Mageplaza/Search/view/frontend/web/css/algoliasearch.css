@@ -1,0 +1,164 @@
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_Search
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+
+/* SearchBox */
+.ais-SearchBox-submit, .ais-SearchBox-reset {
+    background: transparent;
+    border: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.ais-SearchBox-submit:hover, .ais-SearchBox-submit:focus {
+    background: transparent;
+    border: none;
+}
+
+.ais-SearchBox-form {
+    position: relative;
+}
+
+
+button.ais-SearchBox-reset:focus,
+button.ais-SearchBox-reset:active,
+button.ais-SearchBox-reset:hover {
+    border: 0;
+    background: transparent;
+}
+
+input.ais-SearchBox-input {
+    padding-right: 2em;
+}
+
+.mpsearch-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mpsearch-list-item {
+    cursor: pointer;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+}
+
+.mpsearch-list-item:last-child {
+    border-bottom: none;
+}
+
+.mpsearch-list-item:hover {
+    background-color: #eef3d6;
+}
+
+.mpsearch-list-item .result-wrapper a {
+    text-decoration: none;
+}
+
+
+.result-wrapper .result-thumbnail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    margin: 0.5rem;
+}
+
+.result-wrapper .before_special {
+    color: #aaaaaa;
+    text-decoration: line-through;
+    font-size: 12px;
+}
+
+.result-wrapper .text-ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.no-results {
+    padding: 1em 0;
+    text-align: center;
+}
+
+
+.autocomplete-suggestions {
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+}
+
+@media all and (min-width: 769px), print {
+    .autocomplete-suggestions {
+        position: absolute;
+        width: 99.5%;
+        z-index: 999;
+    }
+}
+
+@media all and (max-width: 600px), print {
+    .minisearch .search-category {
+        top: 66% !important;
+        right: 0 !important;
+    }
+}
+
+@media all and (min-width: 600px), print {
+    .algolia-search-block {
+        position: relative;
+        float: right;
+    }
+
+    .algolia-search-block {
+        width: 374px;
+    }
+
+}
+
+.algolia-search-block {
+    position: relative;
+    /*float: right;*/
+}
+
+
+.autocomplete-suggestions .result-content {
+    display: flex;
+}
+
+.autocomplete-suggestions .result-content .result-sub-content {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.autocomplete-suggestions .result-content .result-sub-content .name {
+    font-size: 1.2em;
+}
+
+.autocomplete-suggestions .result-content .result-sub-content .name mark {
+    font-weight: bold;
+    background: none;
+}
+
+.autocomplete-suggestions .result-content .result-sub-content .product-line.product-price {
+    text-align: left;
+    color: black;
+}

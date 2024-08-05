@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_PageBuilder:etc/content_type.xsd">
+    <type name="filterproducts"
+          label="Filter Products"
+          component="Magento_PageBuilder/js/content-type"
+          preview_component="Smartwave_Filterproducts/js/content-type/filterproducts/preview"
+          form="pagebuilder_filterproducts_form"
+          menu_section="porto_content"
+          icon="icon-pagebuilder-products"
+          sortOrder="20"
+          translate="label">
+        <parents default_policy="deny">
+            <parent name="row" policy="allow"/>
+            <parent name="column" policy="allow"/>
+            <parent name="tab-item" policy="allow"/>
+        </parents>
+        <children default_policy="deny"/>
+        <appearances>
+            <appearance default="true"
+                        name="grid"
+                        preview_template="Smartwave_Filterproducts/content-type/filterproducts/grid/preview"
+                        master_template="Smartwave_Filterproducts/content-type/filterproducts/grid/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <style name="text_align" source="text_align"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/border-style" name="border" source="border_style"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/color" name="border_color" source="border_color"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/border-width" name="border_width" source="border_width"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/remove-px" name="border_radius" source="border_radius"/>
+                        <style name="display" source="display" converter="Magento_PageBuilder/js/converter/style/display" preview_converter="Magento_PageBuilder/js/converter/style/preview/display"/>
+                        <style name="margins" storage_key="margins_and_padding" reader="Magento_PageBuilder/js/property/margins" converter="Magento_PageBuilder/js/converter/style/margins"/>
+                        <style name="padding" storage_key="margins_and_padding" reader="Magento_PageBuilder/js/property/paddings" converter="Magento_PageBuilder/js/converter/style/paddings"/>
+                        <attribute source="data-content-type" name="name"/>
+                        <attribute source="data-appearance" name="appearance"/>
+                        <html name="html" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/store-id"/>
+                        <css name="css_classes"/>
+                    </element>
+                </elements>
+                <converters>
+                    <converter component="Smartwave_Filterproducts/js/content-type/filterproducts/mass-converter/widget-directive" name="widget_directive">
+                        <config>
+                            <item name="html_variable" value="html"/>
+                        </config>
+                    </converter>
+                </converters>
+            </appearance>
+            <appearance name="carousel"
+                        preview_template="Smartwave_Filterproducts/content-type/filterproducts/grid/preview"
+                        master_template="Smartwave_Filterproducts/content-type/filterproducts/grid/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <form>pagebuilder_filterproducts_carousel_form</form>
+                <elements>
+                    <element name="main">
+                        <style name="text_align" source="text_align"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/border-style" name="border" source="border_style"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/color" name="border_color" source="border_color"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/border-width" name="border_width" source="border_width"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/remove-px" name="border_radius" source="border_radius"/>
+                        <style name="display" source="display" converter="Magento_PageBuilder/js/converter/style/display" preview_converter="Magento_PageBuilder/js/converter/style/preview/display"/>
+                        <style name="margins" storage_key="margins_and_padding" reader="Magento_PageBuilder/js/property/margins" converter="Magento_PageBuilder/js/converter/style/margins"/>
+                        <style name="padding" storage_key="margins_and_padding" reader="Magento_PageBuilder/js/property/paddings" converter="Magento_PageBuilder/js/converter/style/paddings"/>
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <attribute name="enable_autoplay" source="data-enable_autoplay"/>
+                        <attribute name="enable_slide_loop" source="data-enable_slide_loop"/>
+                        <attribute name="show_slide_nav" source="data-show_slide_nav"/>
+                        <attribute name="show_slide_page" source="data-show_slide_page"/>
+                        <attribute name="desktop_slide_columns" source="data-desktop_slide_columns"/>
+                        <attribute name="tablet_slide_columns" source="data-tablet_slide_columns"/>
+                        <attribute name="mobile_slide_columns" source="data-mobile_slide_columns"/>
+                        <attribute name="extra_class" source="data-extra_class"/> 
+                        <html name="html" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/store-id"/>
+                        <css name="css_classes"/>
+                    </element>
+                </elements>
+                <converters>
+                    <converter component="Smartwave_Filterproducts/js/content-type/filterproducts/mass-converter/carousel-widget-directive" name="widget_directive">
+                        <config>
+                            <item name="html_variable" value="html"/>
+                        </config>
+                    </converter>
+                </converters>
+            </appearance>
+            <appearance name="masonry"
+                        preview_template="Smartwave_Filterproducts/content-type/filterproducts/grid/preview"
+                        master_template="Smartwave_Filterproducts/content-type/filterproducts/grid/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <form>pagebuilder_filterproducts_masonry_form</form>
+                <elements>
+                    <element name="main">
+                        <style name="text_align" source="text_align"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/border-style" name="border" source="border_style"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/color" name="border_color" source="border_color"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/border-width" name="border_width" source="border_width"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/remove-px" name="border_radius" source="border_radius"/>
+                        <style name="display" source="display" converter="Magento_PageBuilder/js/converter/style/display" preview_converter="Magento_PageBuilder/js/converter/style/preview/display"/>
+                        <style name="margins" storage_key="margins_and_padding" reader="Magento_PageBuilder/js/property/margins" converter="Magento_PageBuilder/js/converter/style/margins"/>
+                        <style name="padding" storage_key="margins_and_padding" reader="Magento_PageBuilder/js/property/paddings" converter="Magento_PageBuilder/js/converter/style/paddings"/>
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <html name="html" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/store-id"/>
+                        <css name="css_classes"/>
+                    </element>
+                </elements>
+                <converters>
+                    <converter component="Smartwave_Filterproducts/js/content-type/filterproducts/mass-converter/masonry-widget-directive" name="widget_directive">
+                        <config>
+                            <item name="html_variable" value="html"/>
+                        </config>
+                    </converter>
+                </converters>
+            </appearance>
+            <appearance name="sidelist"
+                        preview_template="Smartwave_Filterproducts/content-type/filterproducts/grid/preview"
+                        master_template="Smartwave_Filterproducts/content-type/filterproducts/grid/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <form>pagebuilder_filterproducts_sidelist_form</form>
+                <elements>
+                    <element name="main">
+                        <style name="text_align" source="text_align"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/border-style" name="border" source="border_style"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/color" name="border_color" source="border_color"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/border-width" name="border_width" source="border_width"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/remove-px" name="border_radius" source="border_radius"/>
+                        <style name="display" source="display" converter="Magento_PageBuilder/js/converter/style/display" preview_converter="Magento_PageBuilder/js/converter/style/preview/display"/>
+                        <style name="margins" storage_key="margins_and_padding" reader="Magento_PageBuilder/js/property/margins" converter="Magento_PageBuilder/js/converter/style/margins"/>
+                        <style name="padding" storage_key="margins_and_padding" reader="Magento_PageBuilder/js/property/paddings" converter="Magento_PageBuilder/js/converter/style/paddings"/>
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <html name="html" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/store-id"/>
+                        <css name="css_classes"/>
+                    </element>
+                </elements>
+                <converters>
+                    <converter component="Smartwave_Filterproducts/js/content-type/filterproducts/mass-converter/sidelist-widget-directive" name="widget_directive">
+                        <config>
+                            <item name="html_variable" value="html"/>
+                        </config>
+                    </converter>
+                </converters>
+            </appearance>
+            <appearance name="smallist"
+                        preview_template="Smartwave_Filterproducts/content-type/filterproducts/grid/preview"
+                        master_template="Smartwave_Filterproducts/content-type/filterproducts/grid/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <form>pagebuilder_filterproducts_smallist_form</form>
+                <elements>
+                    <element name="main">
+                        <style name="text_align" source="text_align"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/border-style" name="border" source="border_style"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/color" name="border_color" source="border_color"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/border-width" name="border_width" source="border_width"/>
+                        <style converter="Magento_PageBuilder/js/converter/style/remove-px" name="border_radius" source="border_radius"/>
+                        <style name="display" source="display" converter="Magento_PageBuilder/js/converter/style/display" preview_converter="Magento_PageBuilder/js/converter/style/preview/display"/>
+                        <style name="margins" storage_key="margins_and_padding" reader="Magento_PageBuilder/js/property/margins" converter="Magento_PageBuilder/js/converter/style/margins"/>
+                        <style name="padding" storage_key="margins_and_padding" reader="Magento_PageBuilder/js/property/paddings" converter="Magento_PageBuilder/js/converter/style/paddings"/>
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <html name="html" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/store-id"/>
+                        <css name="css_classes"/>
+                    </element>
+                </elements>
+                <converters>
+                    <converter component="Smartwave_Filterproducts/js/content-type/filterproducts/mass-converter/smallist-widget-directive" name="widget_directive">
+                        <config>
+                            <item name="html_variable" value="html"/>
+                        </config>
+                    </converter>
+                </converters>
+            </appearance>
+        </appearances>
+    </type>
+</config>

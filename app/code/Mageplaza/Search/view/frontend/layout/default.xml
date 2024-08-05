@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_Search
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Mageplaza_Search::css/algoliasearch.css"/>
+    </head>
+    <body>
+        <referenceBlock name="head.additional">
+            <block class="Magento\Framework\View\Element\Template" name="mpsearch.algolia.configuration" template="Mageplaza_Search::internals/configuration.phtml"/>
+        </referenceBlock>
+        <referenceBlock name="before.body.end">
+            <block class="Magento\Framework\View\Element\Template" name="mp.instant.hit" template="Mageplaza_Search::instant/hit.phtml"/>
+        </referenceBlock>
+        <referenceBlock name="top.search">
+            <block class="Magento\Framework\View\Element\Template" name="mageplaza.top.search" template="Mageplaza_Search::search.phtml"/>
+            <action method="setTemplate">
+                <argument name="setTemplate" helper="Mageplaza\Search\Helper\Data::canShowAlgolia" xsi:type="helper"/>
+            </action>
+        </referenceBlock>
+    </body>
+</page>
