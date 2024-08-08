@@ -62,8 +62,8 @@ class Customtabs extends \Magento\Framework\App\Helper\AbstractHelper
         return $this->_filterProvider->getBlockFilter()->filter(trim($content));
     }
     public function getCustomTabs($product){
-        $cms_tabs = $this->getConfig('porto_settings/product/custom_cms_tabs') ? $this->getConfig('porto_settings/product/custom_cms_tabs') : '';
-        $attr_tabs = $this->getConfig('porto_settings/product/custom_attr_tabs') ? $this->getConfig('porto_settings/product/custom_attr_tabs') : '';
+        $cms_tabs = $this->getConfig('porto_settings/product/custom_cms_tabs') ? $this->getConfig('porto_settings/product/custom_cms_tabs') : [];
+        $attr_tabs = $this->getConfig('porto_settings/product/custom_attr_tabs') ? $this->getConfig('porto_settings/product/custom_attr_tabs') : [];
         $_sku = $product->getSku();
         if($cms_tabs)
             $cms_tabs = unserialize($cms_tabs);
@@ -74,7 +74,7 @@ class Customtabs extends \Magento\Framework\App\Helper\AbstractHelper
             foreach($product->getCategoryCollection() as $parent_cat) {
                 $parents[] = $parent_cat->getId();
             }
-        }
+	}
         $store_id = $this->_storeManager->getStore()->getId();
         $custom_tabs = array();
         if(count($cms_tabs)>0){

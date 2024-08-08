@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Mail\Template\TransportBuilder">
+        <plugin name="mt_mail_template_transport_builder" type="Meetanshi\SMTP\Mail\Template\TransportBuilder" sortOrder="1" disabled="false"/>
+    </type>
+    <type name="Laminas\Mail\Transport\TransportInterface">
+        <plugin name="mt_mail_transport" type="Meetanshi\SMTP\Mail\Transport" sortOrder="1" disabled="false"/>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="mt_emails_log_grid_data_source" xsi:type="string">
+                    Meetanshi\SMTP\Model\ResourceModel\Logs\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Meetanshi\SMTP\Model\ResourceModel\Logs\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mt_email_logs</argument>
+            <argument name="eventPrefix" xsi:type="string">mt_email_logs</argument>
+            <argument name="eventObject" xsi:type="string">mt_email_logs</argument>
+            <argument name="resourceModel" xsi:type="string">
+                Meetanshi\SMTP\Model\ResourceModel\Logs
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Mail\Template\TransportBuilderByStore">
+        <plugin name="mt_appTransportBuilder" type="Meetanshi\SMTP\Plugin\Message"/>
+    </type>
+    <preference for="Magento\Framework\Mail\EmailMessage" type="Meetanshi\SMTP\Mail\EmailMessage"/>
+</config>

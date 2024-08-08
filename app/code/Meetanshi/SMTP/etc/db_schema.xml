@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="mt_email_logs" resource="default" engine="innodb" comment="Email Logs">
+
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true"
+                padding="8" comment="ID"/>
+        <column xsi:type="varchar" name="subject" nullable="false" length="255" comment="Subject"/>
+        <column xsi:type="text" name="email_content" nullable="false" comment="Email Content"/>
+        <column xsi:type="smallint" name="status" nullable="false"
+                comment="Status"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false" comment="Create At"/>
+        <column xsi:type="varchar" name="sender" nullable="false" length="255" comment="Sender"/>
+        <column xsi:type="varchar" name="recipient" nullable="false" length="255" comment="Recipient"/>
+        <column xsi:type="varchar" name="cc" nullable="false" length="255" comment="CC"/>
+        <column xsi:type="varchar" name="bcc" nullable="false" length="255" comment="BCC"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <index referenceId="MT_EMAIL_LOGS_SUBJECT" indexType="btree">
+            <column name="subject"/>
+        </index>
+        <index referenceId="MT_EMAIL_LOGS_RECIPIENT" indexType="btree">
+            <column name="recipient"/>
+        </index>
+        <index referenceId="MT_EMAIL_LOGS_CC" indexType="btree">
+            <column name="cc"/>
+        </index>
+        <index referenceId="MT_EMAIL_LOGS_BCC" indexType="btree">
+            <column name="bcc"/>
+        </index>
+    </table>
+</schema>

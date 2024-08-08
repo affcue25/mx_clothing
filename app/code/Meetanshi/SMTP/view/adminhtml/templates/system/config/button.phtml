@@ -1,0 +1,17 @@
+<?php
+/** @var \Meetanshi\SMTP\Block\Adminhtml\System\Config\Button $block */
+?>
+<div class="actions actions-test-email">
+    <button class="actions-test-email" type="button" id="<?= $block->getHtmlId() ?>">
+        <span><?= $block->escapeHtml($block->getButtonLabel()) ?></span>
+    </button>
+</div>
+<script type="text/x-magento-init">
+    {
+        "#smtp_configuration_option_test_email_to": {
+            "meetanshi/testemail": {
+                "ajaxUrl": "<?= $block->getButtonUrl() ?>"
+            }
+        }
+    }
+</script>

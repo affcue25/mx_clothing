@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="mt_resend_email_template" label="Meetanshi SMTP Resend Email" file="resend_email_template.html" type="html" module="Meetanshi_SMTP" area="frontend"/>
+    <template id="mt_test_email_template" label="Meetanshi Test Email" file="test_email_template.html" type="html" module="Meetanshi_SMTP" area="frontend"/>
+</config>

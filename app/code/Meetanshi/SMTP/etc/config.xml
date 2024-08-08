@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <smtp>
+            <general>
+                <enabled>0</enabled>
+                <log_email>1</log_email>
+                <clean_email>10</clean_email>
+                <host>smtp.gmail.com</host>
+                <port>465</port>
+                <protocol>ssl</protocol>
+            </general>
+        </smtp>
+    </default>
+</config>

@@ -1,0 +1,20 @@
+.meetanshi .title:before {
+    background-image: url(https://meetanshi.com/media/logo.png);
+    background-size: 150px 19px;
+    display: inline-block;
+    width: 150px;
+    height: 19px;
+    content: "";
+    background-repeat: no-repeat;
+}
+.mt_smtp-smtp-log .modal-slide._inner-scroll .modal-content {
+    overflow-y: auto;
+    height: 100vh !important;
+    max-height: none;
+}
+.mt_smtp-smtp-log .modal-content div {
+    height: 90vh;
+}
+.mt_smtp-smtp-log .confirm .modal-content div {
+    height: auto;
+}

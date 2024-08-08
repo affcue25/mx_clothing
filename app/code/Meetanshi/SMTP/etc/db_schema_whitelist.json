@@ -1,0 +1,24 @@
+{
+    "mt_email_logs": {
+        "column": {
+            "id": true,
+            "subject": true,
+            "email_content": true,
+            "status": true,
+            "created_at": true,
+            "sender": true,
+            "recipient": true,
+            "cc": true,
+            "bcc": true
+        },
+        "index": {
+            "MT_EMAIL_LOGS_SUBJECT": true,
+            "MT_EMAIL_LOGS_RECIPIENT": true,
+            "MT_EMAIL_LOGS_CC": true,
+            "MT_EMAIL_LOGS_BCC": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
