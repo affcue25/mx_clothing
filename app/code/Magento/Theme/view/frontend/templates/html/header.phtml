@@ -11,18 +11,26 @@
 $welcomeMessage = $block->getWelcome();
 ?>
 <?php if ($block->getShowPart() == 'welcome') : ?>
-    <li class="greet welcome" data-bind="scope: 'customer'">
-        <!-- ko if: customer().fullname  -->
-        <span class="logged-in"
-              data-bind="text: new String('<?= $escaper->escapeHtml(__('Welcome, %1!', '%1')) ?>').replace('%1', customer().fullname)">
-        </span>
-        <!-- /ko -->
-        <!-- ko ifnot: customer().fullname  -->
-        <span class="not-logged-in"
-              data-bind="html: '<?= $escaper->escapeHtmlAttr($welcomeMessage) ?>'"></span>
-        <?= $block->getBlockHtml('header.additional') ?>
-        <!-- /ko -->
-    </li>
+  <div style="display: contents;"  data-bind="scope: 'customer'">
+    <!-- ko if: customer().fullname -->
+<li  
+    class="greet welcome logged-in">
+    <span class="logged-in"
+          data-bind="text: new String('<?= $escaper->escapeHtml(__('Welcome, %1!', '%1')) ?>').replace('%1', customer().fullname)">
+    </span>
+</li>
+<!-- /ko -->
+
+<!-- ko ifnot: customer().fullname -->
+<li style="margin-right: auto;"  
+    class="greet welcome not-logged-in">
+    <span class="not-logged-in"
+          data-bind="html: '<?= $escaper->escapeHtmlAttr($welcomeMessage) ?>'">
+    </span>
+    <?= $block->getBlockHtml('header.additional') ?>
+</li>
+<!-- /ko -->
+  </div>
     <script type="text/x-magento-init">
     {
         "*": {

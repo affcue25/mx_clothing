@@ -118,8 +118,14 @@ html .btn-v-dark {color: #fff !important;background-color: #222529 !important;bo
 .block.category.event,.footer.content,.header.content,.navigation,.page-main,.page-wrapper>.breadcrumbs ul,.page-wrapper>.page-bottom,.page-wrapper>.widget,.top-container{max-width:1140px;}
 }
 @media (min-width: 1200px){
-.layout-1220 .container{max-width:1200px;width:100%;}
-.layout-1220 .block.category.event,.layout-1220 .footer.content,.layout-1220 .header.content,.layout-1220 .navigation,.layout-1220 .page-main,.layout-1220 .page-wrapper>.breadcrumbs >ul,.layout-1220 .page-wrapper>.page-bottom,.layout-1220 .page-wrapper>.widget,.layout-1220 .top-container{max-width:1200px;}
+.layout-1220 .container{
+/**max-width:1200px;width:100%;**/
+   max-width: 85%;
+}
+.layout-1220 .block.category.event,.layout-1220 .footer.content,.layout-1220 .header.content,.layout-1220 .navigation,.layout-1220 .page-main,.layout-1220 .page-wrapper>.breadcrumbs >ul,.layout-1220 .page-wrapper>.page-bottom,.layout-1220 .page-wrapper>.widget,.layout-1220 .top-container{
+/** max-width:1200px; **/
+    max-width: 85%;
+}
 }
 @media (max-width: 991px){
 .block.category.event, .footer.content, .header.content, .navigation, .page-main, .page-wrapper>.breadcrumbs ul, .page-wrapper>.page-bottom, .page-wrapper>.widget, .top-container, .page-wrapper > .breadcrumbs .items,.container {
@@ -232,7 +238,13 @@ html .btn-v-dark {color: #fff !important;background-color: #222529 !important;bo
 }
 .page-header .panel.wrapper {display: flex;align-items: center;flex-wrap: wrap;min-height: 40px;font-size: .7857em;font-weight: 600;}
 .page-header .panel.wrapper .header-left {display: flex;align-items: center;justify-content: flex-start;}
-.page-header .panel.wrapper .header-right {display: flex;align-items: center;justify-content: flex-end;margin-left: auto;}
+.page-header .panel.wrapper .header-right {
+display: flex;
+align-items: center;
+/** justify-content: flex-end; **/
+/** margin-left: auto; **/
+width: 100%;
+}
 .page-header .header.panel {display: flex;align-items: center; flex-wrap: wrap;justify-content: flex-start;padding: 0;}
 .header.panel > .header.links > li {line-height: 26px;letter-spacing: .025em;}
 .header.panel > .header.links > li > span {border: none; }

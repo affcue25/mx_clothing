@@ -4,7 +4,7 @@
  *
  * NOTICE OF LICENSE
  *
- * This source file is subject to the Mageplaza.com license that is
+ * This source file is subject to the mageplaza.com license that is
  * available through the world-wide-web at this URL:
  * https://www.mageplaza.com/LICENSE.txt
  *
@@ -15,13 +15,14 @@
  *
  * @category    Mageplaza
  * @package     Mageplaza_Core
- * @copyright   Copyright (c) 2016-2018 Mageplaza (http://www.mageplaza.com/)
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
  * @license     https://www.mageplaza.com/LICENSE.txt
  */
 
 namespace Mageplaza\Core\Model\Message;
 
 use Magento\Framework\Notification\MessageInterface;
+use Magento\Framework\Phrase;
 use Magento\Framework\UrlInterface;
 use Mageplaza\Core\Helper\Validate as ValidateHelper;
 
@@ -32,12 +33,12 @@ use Mageplaza\Core\Helper\Validate as ValidateHelper;
 class Validate implements MessageInterface
 {
     /**
-     * @var \Mageplaza\Core\Helper\Validate
+     * @var ValidateHelper
      */
     protected $_helper;
 
     /**
-     * @var \Magento\Framework\UrlInterface
+     * @var UrlInterface
      */
     protected $urlBuilder;
 
@@ -48,14 +49,14 @@ class Validate implements MessageInterface
 
     /**
      * Validate constructor.
-     * @param \Mageplaza\Core\Helper\Validate $helper
-     * @param \Magento\Framework\UrlInterface $urlBuilder
+     *
+     * @param ValidateHelper $helper
+     * @param UrlInterface $urlBuilder
      */
     public function __construct(
         ValidateHelper $helper,
         UrlInterface $urlBuilder
-    )
-    {
+    ) {
         $this->_helper = $helper;
         $this->urlBuilder = $urlBuilder;
     }
@@ -68,11 +69,8 @@ class Validate implements MessageInterface
     public function isDisplayed()
     {
         $notActiveModules = $this->getModules();
-        if (sizeof($notActiveModules)) {
-            return true;
-        }
 
-        return false;
+        return (bool) count($notActiveModules);
     }
 
     /**
@@ -99,13 +97,13 @@ class Validate implements MessageInterface
      */
     public function getIdentity()
     {
-        return md5('MAGEPLAZA_VALIDATE_MESSAGE');
+        return hash('md5', 'MAGEPLAZA_VALIDATE_MESSAGE');
     }
 
     /**
      * Retrieve message text
      *
-     * @return \Magento\Framework\Phrase|string
+     * @return Phrase|string
      */
     public function getText()
     {

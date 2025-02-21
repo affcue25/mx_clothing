@@ -4,7 +4,7 @@
  *
  * NOTICE OF LICENSE
  *
- * This source file is subject to the Mageplaza.com license that is
+ * This source file is subject to the mageplaza.com license that is
  * available through the world-wide-web at this URL:
  * https://www.mageplaza.com/LICENSE.txt
  *
@@ -15,7 +15,7 @@
  *
  * @category    Mageplaza
  * @package     Mageplaza_Core
- * @copyright   Copyright (c) 2016-2018 Mageplaza (http://www.mageplaza.com/)
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
  * @license     https://www.mageplaza.com/LICENSE.txt
  */
 
@@ -33,13 +33,14 @@ class Message extends Field
     /**
      * Render text
      *
-     * @param  \Magento\Framework\Data\Form\Element\AbstractElement $element
+     * @param AbstractElement $element
+     *
      * @return string
      */
     public function render(AbstractElement $element)
     {
-        $html = '<td colspan="3">
-                    <div id="mageplaza-module-messages" style="display: none">
+        $html = '<td colspan="3" id="mageplaza-module-message-id">
+                    <div id="mageplaza-module-messages" class="mageplaza-module-messages" style="display: none">
                         <div class="messages">
                             <div class="message message-error">
                                 <div data-ui-id="messages-message-error"></div>
@@ -48,13 +49,14 @@ class Message extends Field
                     </div>
                 </td>';
 
-        return $html;
+        return $this->_decorateRowHtml($element, $html);
     }
 
     /**
      * Return element html
      *
-     * @param  \Magento\Framework\Data\Form\Element\AbstractElement $element
+     * @param AbstractElement $element
+     *
      * @return string
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */

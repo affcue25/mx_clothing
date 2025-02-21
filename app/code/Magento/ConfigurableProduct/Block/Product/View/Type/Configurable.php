@@ -223,13 +223,13 @@ class Configurable extends \Magento\Catalog\Block\Product\View\AbstractView
 
         $options = $this->helper->getOptions($currentProduct, $this->getAllowProducts());
         $attributesData = $this->configurableAttributeData->getAttributesData($currentProduct, $options);
-
+        
         $config = [
             'attributes' => $attributesData['attributes'],
-            'template' => str_replace('%s', '<%- data.price %>', $store->getCurrentCurrency()->getOutputFormat()),
-            'currencyFormat' => $store->getCurrentCurrency()->getOutputFormat(),
-            'optionPrices' => $this->getOptionPrices(),
-            'priceFormat' => $this->localeFormat->getPriceFormat(),
+	    'template' => str_replace('%s', '<%- data.price %>', $store->getCurrentCurrency()->getOutputFormat()),
+	    'currencyFormat' => $store->getCurrentCurrency()->getOutputFormat(),
+	    'optionPrices' => $this->getOptionPrices(),
+	    'priceFormat' => $this->localeFormat->getPriceFormat(),
             'prices' => $this->variationPrices->getFormattedPrices($this->getProduct()->getPriceInfo()),
             'productId' => $currentProduct->getId(),
             'chooseText' => __('Choose an Option...'),
@@ -307,14 +307,14 @@ class Configurable extends \Magento\Catalog\Block\Product\View\AbstractView
                 'finalPrice' => [
                     'amount' => $this->localeFormat->getNumber(
                         $priceInfo->getPrice('final_price')->getAmount()->getValue()
-                    ),
-                ],
+		    ),
+		],
                 'tierPrices' => $this->getTierPricesByProduct($product),
                 'msrpPrice' => [
                     'amount' => $this->localeFormat->getNumber(
                         $this->priceCurrency->convertAndRound($product->getMsrp())
                     ),
-                ],
+		],
             ];
         }
 

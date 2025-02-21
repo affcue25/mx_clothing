@@ -6,7 +6,7 @@
  *
  * This source file is subject to the mageplaza.com license that is
  * available through the world-wide-web at this URL:
- * https://mageplaza.com/LICENSE.txt
+ * https://www.mageplaza.com/LICENSE.txt
  *
  * DISCLAIMER
  *
@@ -14,9 +14,9 @@
  * version in the future.
  *
  * @category    Mageplaza
- * @package     Mageplaza_Smtp
- * @copyright   Copyright (c) 2016-2018 Mageplaza (https://www.mageplaza.com/)
- * @license     http://mageplaza.com/LICENSE.txt
+ * @package     Mageplaza_Core
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
  */
 
 namespace Mageplaza\Core\Controller\Adminhtml\Index;
@@ -25,6 +25,8 @@ use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Config\Model\ResourceModel\Config;
 use Magento\Framework\App\Config\ReinitableConfigInterface;
+use Magento\Framework\Controller\ResultInterface;
+use Mageplaza\Core\Helper\AbstractData;
 use Mageplaza\Core\Helper\Validate;
 use Mageplaza\Core\Model\ActivateFactory;
 
@@ -42,17 +44,17 @@ class Activate extends Action
     const ADMIN_RESOURCE = 'Mageplaza_Core::activate';
 
     /**
-     * @var \Mageplaza\Smtp\Model\ActivateFactory
+     * @var ActivateFactory
      */
     protected $activateFactory;
 
     /**
-     * @var \Magento\Config\Model\ResourceModel\Config
+     * @var Config
      */
     protected $resourceConfig;
 
     /**
-     * @var \Mageplaza\Core\Helper\AbstractData
+     * @var AbstractData
      */
     protected $_coreHelper;
 
@@ -64,17 +66,18 @@ class Activate extends Action
     /**
      * Application config
      *
-     * @var \Magento\Framework\App\Config\ScopeConfigInterface
+     * @var ReinitableConfigInterface
      */
     protected $_appConfig;
 
     /**
      * Activate constructor.
-     * @param \Magento\Backend\App\Action\Context $context
-     * @param \Magento\Config\Model\ResourceModel\Config $resourceConfig
-     * @param \Magento\Framework\App\Config\ReinitableConfigInterface $config
-     * @param \Mageplaza\Core\Helper\Validate $helper
-     * @param \Mageplaza\Core\Model\ActivateFactory $activateFactory
+     *
+     * @param Context $context
+     * @param Config $resourceConfig
+     * @param ReinitableConfigInterface $config
+     * @param Validate $helper
+     * @param ActivateFactory $activateFactory
      */
     public function __construct(
         Context $context,
@@ -82,8 +85,7 @@ class Activate extends Action
         ReinitableConfigInterface $config,
         Validate $helper,
         ActivateFactory $activateFactory
-    )
-    {
+    ) {
         $this->activateFactory = $activateFactory;
         $this->resourceConfig = $resourceConfig;
         $this->_appConfig = $config;
@@ -95,11 +97,11 @@ class Activate extends Action
     /**
      * Execute view action
      *
-     * @return \Magento\Framework\Controller\ResultInterface
+     * @return ResultInterface
      */
     public function execute()
     {
-        $params = $this->getRequest()->getPost();
+        $params = $this->getRequest()->getPost()->toArray();
         if (!isset($params['extension'])) {
             return $this->jsonResponse([
                 'success' => false,
@@ -123,9 +125,9 @@ class Activate extends Action
 
             if ($this->_coreHelper->getModuleType($params['extension']) == '1') {
                 $freeInfo = [
-                    'email' => $params['email'],
-                    'name' => $params['name'],
-                    'create' => $params['create'],
+                    'email'     => $params['email'],
+                    'name'      => $params['name'],
+                    'create'    => $params['create'],
                     'subscribe' => $params['subscribe']
                 ];
                 foreach ($freeInfo as $code => $value) {
@@ -144,6 +146,7 @@ class Activate extends Action
 
     /**
      * @param $result
+     *
      * @return mixed
      */
     protected function jsonResponse($result)
@@ -159,6 +162,7 @@ class Activate extends Action
      * @param bool $isFullPath
      * @param string $scope
      * @param int $scopeId
+     *
      * @return $this
      */
     protected function saveConfig($pathId, $value = null, $isFullPath = false, $scope = 'default', $scopeId = 0)
@@ -183,6 +187,7 @@ class Activate extends Action
 
     /**
      * @param $pathId
+     *
      * @return string
      */
     protected function buildConfigPath($pathId)
@@ -195,6 +200,7 @@ class Activate extends Action
      * @param bool $isFullPath
      * @param string $scope
      * @param int $scopeId
+     *
      * @return $this
      */
     protected function deleteConfig($pathId, $isFullPath = false, $scope = 'default', $scopeId = 0)

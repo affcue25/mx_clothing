@@ -201,9 +201,10 @@
                   <div class="panel header show-icon-tablet">
                     <div class="top-links-icon">
                       <a href="javascript:;"><?php echo __('Links');?></a>
-                    </div>
+		    </div>
                     <?php echo $this->getChildHtml("header.links"); ?>
                   </div>
+		  <?php echo $this->getChildHtml("header.links"); ?>
                   <?php echo $this->getChildHtml("custom_block_top"); ?>
                 </div>
               </div>
@@ -217,15 +218,19 @@
         <?php echo $this->getChildHtml("logo"); ?>
         <?php echo $this->getChildHtml("navigation.sections"); ?>
         <span class="separator"></span>
+        <!-- <div class="search-area show-icon">
+          <a href="javascript:void(0);" class="search-toggle-icon"><span><i class="porto-icon-magnifier"></i></span></a>
+          <?php echo $this->getChildHtml("top.search"); ?>
+	</div> -->
+      </div>
+      <div class="header-right">
         <div class="search-area show-icon">
           <a href="javascript:void(0);" class="search-toggle-icon"><span><i class="porto-icon-magnifier"></i></span></a>
           <?php echo $this->getChildHtml("top.search"); ?>
         </div>
-      </div>
-      <div class="header-right">
-        <div class="header-contact">
+        <!-- <div class="header-contact">
           <?php echo $this->getChildHtml("custom_block"); ?>
-        </div>
+	</div> -->
         <span class="separator"></span>
         <?php echo $this->getChildHtml("minicart"); ?>
       </div>

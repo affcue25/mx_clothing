@@ -4,7 +4,7 @@
  *
  * NOTICE OF LICENSE
  *
- * This source file is subject to the Mageplaza.com license that is
+ * This source file is subject to the mageplaza.com license that is
  * available through the world-wide-web at this URL:
  * https://www.mageplaza.com/LICENSE.txt
  *
@@ -15,7 +15,7 @@
  *
  * @category    Mageplaza
  * @package     Mageplaza_Core
- * @copyright   Copyright (c) 2016-2018 Mageplaza (http://www.mageplaza.com/)
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
  * @license     https://www.mageplaza.com/LICENSE.txt
  */
 
@@ -32,7 +32,10 @@ use Magento\Store\Model\StoreManagerInterface;
  */
 class Validate extends AbstractData
 {
-    const DEV_ENV = ['localhost', 'dev', '127.0.0.1', '192.168.', 'demo.'];
+    const MODULE_TYPE_FREE = 1;
+    const MODULE_TYPE_PAID = 2;
+    //    const DEV_ENV = ['localhost', 'dev', '127.0.0.1', '192.168.', 'demo.'];
+    const DEV_ENV = [];
 
     /**
      * @var array
@@ -45,24 +48,24 @@ class Validate extends AbstractData
     protected $_mageplazaModules;
 
     /**
-     * @var \Magento\Framework\Module\ModuleListInterface
+     * @var ModuleListInterface
      */
     protected $_moduleList;
 
     /**
      * Validate constructor.
-     * @param \Magento\Framework\App\Helper\Context $context
-     * @param \Magento\Framework\ObjectManagerInterface $objectManager
-     * @param \Magento\Store\Model\StoreManagerInterface $storeManager
-     * @param \Magento\Framework\Module\ModuleListInterface $moduleList
+     *
+     * @param Context $context
+     * @param ObjectManagerInterface $objectManager
+     * @param StoreManagerInterface $storeManager
+     * @param ModuleListInterface $moduleList
      */
     public function __construct(
         Context $context,
         ObjectManagerInterface $objectManager,
         StoreManagerInterface $storeManager,
         ModuleListInterface $moduleList
-    )
-    {
+    ) {
         $this->_moduleList = $moduleList;
 
         parent::__construct($context, $objectManager, $storeManager);
@@ -70,31 +73,42 @@ class Validate extends AbstractData
 
     /**
      * @param $moduleName
+     *
      * @return bool
      */
     public function needActive($moduleName)
     {
         $type = $this->getModuleType($moduleName);
-        if (!$type || !in_array($type, ['1', '2'])) {
-            return false;
-        }
 
-        return true;
+        return $type && $type === self::MODULE_TYPE_FREE;
     }
 
     /**
      * @param $moduleName
+     *
      * @return mixed
      */
     public function getModuleType($moduleName)
     {
-        $configModulePath = $this->getConfigModulePath($moduleName);
-
-        return $this->getConfigValue($configModulePath . '/module/type');
+        return (int) $this->getModuleData($moduleName, 'type') ?: self::MODULE_TYPE_PAID;
     }
 
     /**
      * @param $moduleName
+     * @param string $field
+     *
+     * @return array|mixed
+     */
+    public function getModuleData($moduleName, $field = '')
+    {
+        $configModulePath = $this->getConfigModulePath($moduleName);
+
+        return $this->getConfigValue($configModulePath . '/module/' . $field);
+    }
+
+    /**
+     * @param $moduleName
+     *
      * @return bool
      */
     public function getConfigModulePath($moduleName)
@@ -116,38 +130,35 @@ class Validate extends AbstractData
 
     /**
      * @param $moduleName
+     *
      * @return bool
      */
     public function isModuleActive($moduleName)
     {
-        $configModulePath = $this->getConfigModulePath($moduleName);
-
-        return $this->getConfigValue($configModulePath . '/module/active')
-            && $this->getConfigValue($configModulePath . '/module/product_key');
+        return $this->getModuleData($moduleName, 'active') && $this->getModuleData($moduleName, 'product_key');
     }
 
     /**
      * @param $moduleName
-     * @return array
+     *
+     * @return string
      */
     public function getModuleCheckbox($moduleName)
     {
-        $configModulePath = $this->getConfigModulePath($moduleName);
-
-        $create = $this->getConfigValue($configModulePath . '/module/create');
-        if (is_null($create)) {
+        $create = $this->getModuleData($moduleName, 'create');
+        if ($create === null) {
             $create = 1;
         }
 
-        $subscribe = $this->getConfigValue($configModulePath . '/module/subscribe');
-        if (is_null($subscribe)) {
+        $subscribe = $this->getModuleData($moduleName, 'subscribe');
+        if ($subscribe === null) {
             $subscribe = 1;
         }
 
-        return [
-            'create' => (int)$create,
-            'subscribe' => (int)$subscribe
-        ];
+        return self::jsonEncode([
+            'create'    => (int) $create,
+            'subscribe' => (int) $subscribe
+        ]);
     }
 
     /**
@@ -155,15 +166,17 @@ class Validate extends AbstractData
      */
     public function getModuleList()
     {
-        if (is_null($this->_mageplazaModules)) {
+        if ($this->_mageplazaModules === null) {
             $this->_mageplazaModules = [];
 
             $allowList = true;
-            $hostName = $this->_urlBuilder->getBaseUrl();
-            foreach (self::DEV_ENV as $env) {
-                if (strpos($hostName, $env) !== false) {
-                    $allowList = false;
-                    break;
+            if (count(self::DEV_ENV)) {
+                $hostName = $this->_urlBuilder->getBaseUrl();
+                foreach (self::DEV_ENV as $env) {
+                    if (strpos($hostName, $env) !== false) {
+                        $allowList = false;
+                        break;
+                    }
                 }
             }
 

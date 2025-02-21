@@ -4,7 +4,7 @@
  *
  * NOTICE OF LICENSE
  *
- * This source file is subject to the Mageplaza.com license that is
+ * This source file is subject to the mageplaza.com license that is
  * available through the world-wide-web at this URL:
  * https://www.mageplaza.com/LICENSE.txt
  *
@@ -15,42 +15,21 @@
  *
  * @category    Mageplaza
  * @package     Mageplaza_Core
- * @copyright   Copyright (c) 2016-2018 Mageplaza (http://www.mageplaza.com/)
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
  * @license     https://www.mageplaza.com/LICENSE.txt
  */
 
 namespace Mageplaza\Core\Model\Config\Source;
 
-use Magento\Framework\Option\ArrayInterface;
-
 /**
  * Class NoticeType
  * @package Mageplaza\Core\Model\Config\Source
  */
-class NoticeType implements ArrayInterface
+class NoticeType extends AbstractSource
 {
     const TYPE_ANNOUNCEMENT = 'announcement';
-    const TYPE_NEWUPDATE = 'new_update';
-    const TYPE_MARKETING = 'marketing';
-
-    /**
-     * Options getter
-     *
-     * @return array
-     */
-    public function toOptionArray()
-    {
-        $options = [];
-
-        foreach ($this->toArray() as $value => $label) {
-            $options[] = [
-                'value' => $value,
-                'label' => $label
-            ];
-        }
-
-        return $options;
-    }
+    const TYPE_NEWUPDATE    = 'new_update';
+    const TYPE_MARKETING    = 'marketing';
 
     /**
      * Get options in "key-value" format
@@ -61,8 +40,8 @@ class NoticeType implements ArrayInterface
     {
         return [
             self::TYPE_ANNOUNCEMENT => __('Announcement'),
-            self::TYPE_NEWUPDATE => __('New & Update extensions'),
-            self::TYPE_MARKETING => __('Promotions ')
+            self::TYPE_NEWUPDATE    => __('New & Update extensions'),
+            self::TYPE_MARKETING    => __('Promotions ')
         ];
     }
 }

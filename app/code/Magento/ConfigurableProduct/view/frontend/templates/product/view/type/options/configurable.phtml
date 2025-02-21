@@ -31,8 +31,8 @@ $_attributes = $block->decorateArray($block->getAllowAttributes());
         {
             "#product_addtocart_form": {
                 "configurable": {
-                    "spConfig": <?= /* @noEscape */ $block->getJsonConfig() ?>,
-                    "gallerySwitchStrategy": "<?= $block->escapeJs($block->getVar(
+		    "spConfig": <?= /* @noEscape */ $block->getJsonConfig() ?>,
+		    "gallerySwitchStrategy": "<?= $block->escapeJs($block->getVar(
                         'gallery_switch_strategy',
                         'Magento_ConfigurableProduct'
                     ) ?: 'replace'); ?>"
@@ -41,6 +41,22 @@ $_attributes = $block->decorateArray($block->getAllowAttributes());
             "*" : {
                 "Magento_ConfigurableProduct/js/catalog-add-to-cart": {}
             }
-        }
+}
+</script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+    // Select the dropdown element by its name attribute
+    setTimeout(() => {	
+    var selectElement = document.querySelector('select[name="super_attribute[162]"]');
+
+    // Iterate over the options in the select element
+    for (var i = 0; i < selectElement.options.length; i++) {
+        var option = selectElement.options[i];
+
+        // Remove the "+PKR" and any following text from the option text
+        option.text = option.text.replace(/\s*\+PKR.*$/, '');
+    }
+},8000);
+});
     </script>
 <?php endif;?>

@@ -4,7 +4,7 @@
  *
  * NOTICE OF LICENSE
  *
- * This source file is subject to the Mageplaza.com license that is
+ * This source file is subject to the mageplaza.com license that is
  * available through the world-wide-web at this URL:
  * https://www.mageplaza.com/LICENSE.txt
  *
@@ -15,41 +15,53 @@
  *
  * @category    Mageplaza
  * @package     Mageplaza_Core
- * @copyright   Copyright (c) 2016-2018 Mageplaza (http://www.mageplaza.com/)
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
  * @license     https://www.mageplaza.com/LICENSE.txt
  */
 
 namespace Mageplaza\Core\Model;
 
+use Exception;
+use Laminas\Http\Request;
+use Magento\Framework\DataObject;
+use Magento\Framework\HTTP\Adapter\CurlFactory;
 use Mageplaza\Core\Helper\AbstractData;
 
 /**
  * Class Activate
  * @package Mageplaza\Core\Model
  */
-class Activate extends \Magento\AdminNotification\Model\Feed
+class Activate extends DataObject
 {
     /**
-     * @inheritdoc
+     * Localhost maybe not active via https
+     *
      */
-    const MAGEPLAZA_ACTIVE_URL = 'http://store.mageplaza.com/license/index/activate';
+    const MAGEPLAZA_ACTIVE_URL = 'https://dashboard.mageplaza.com/license/index/activate/?isAjax=true';
 
     /**
-     * @inheritdoc
+     * @var CurlFactory
      */
-    public function getActiveUrl()
-    {
-        return self::MAGEPLAZA_ACTIVE_URL;
-//        $httpPath = $this->_backendConfig->isSetFlag(self::XML_USE_HTTPS_PATH) ? 'https://' : 'http://';
-//        if ($this->_feedUrl === null) {
-//            $this->_feedUrl = $httpPath . self::MAGEPLAZA_ACTIVE_URL;
-//        }
-//
-//        return $this->_feedUrl;
+    protected $curlFactory;
+
+    /**
+     * Activate constructor.
+     *
+     * @param CurlFactory $curlFactory
+     * @param array $data
+     */
+    public function __construct(
+        CurlFactory $curlFactory,
+        array $data = []
+    ) {
+        $this->curlFactory = $curlFactory;
+
+        parent::__construct($data);
     }
 
     /**
      * @param array $params
+     *
      * @return array
      */
     public function activate($params = [])
@@ -57,25 +69,48 @@ class Activate extends \Magento\AdminNotification\Model\Feed
         $result = ['success' => false];
 
         $curl = $this->curlFactory->create();
-        $curl->write(\Zend_Http_Client::POST, $this->getActiveUrl(), '1.1', [], http_build_query($params));
+        $curl->write(
+            Request::METHOD_POST,
+            self::MAGEPLAZA_ACTIVE_URL,
+            '1.1',
+            [],
+            http_build_query($params)
+        );
 
         try {
             $resultCurl = $curl->read();
-            if (!empty($resultCurl)) {
-                $responseBody = \Zend_Http_Response::extractBody($resultCurl);
+            if (empty($resultCurl)) {
+                $result['message'] = __('Cannot connect to server. Please try again later.');
+            } else {
+                $responseBody = $this->extractBody($resultCurl);
                 $result       += AbstractData::jsonDecode($responseBody);
                 if (isset($result['status']) && in_array($result['status'], [200, 201])) {
                     $result['success'] = true;
                 }
-            } else {
-                $result['message'] = __('Cannot connect to server. Please try again later.');
             }
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $result['message'] = $e->getMessage();
         }
 
         $curl->close();
 
         return $result;
+    }
+
+    /**
+     * Extract the body from a response string
+     *
+     * @param string $response_str
+     *
+     * @return string
+     */
+    public function extractBody(string $response_str): string
+    {
+        $parts = preg_split('|(?:\r\n){2}|m', $response_str, 2);
+        if (isset($parts[1])) {
+            return $parts[1];
+        }
+
+        return '';
     }
 }

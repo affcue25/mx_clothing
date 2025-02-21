@@ -3,7 +3,7 @@
  *
  * NOTICE OF LICENSE
  *
- * This source file is subject to the Mageplaza.com license that is
+ * This source file is subject to the mageplaza.com license that is
  * available through the world-wide-web at this URL:
  * https://www.mageplaza.com/LICENSE.txt
  *
@@ -14,12 +14,13 @@
  *
  * @category    Mageplaza
  * @package     Mageplaza_Core
- * @copyright   Copyright (c) 2016-2018 Mageplaza (http://www.mageplaza.com/)
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
  * @license     https://www.mageplaza.com/LICENSE.txt
  */
 
 var config = {
     paths: {
+        'jquery/file-uploader': 'Mageplaza_Core/lib/fileUploader/jquery.fileuploader',
         'mageplaza/core/jquery/popup': 'Mageplaza_Core/js/jquery.magnific-popup.min',
         'mageplaza/core/owl.carousel': 'Mageplaza_Core/js/owl.carousel.min',
         'mageplaza/core/bootstrap': 'Mageplaza_Core/js/bootstrap.min',
@@ -32,6 +33,7 @@ var config = {
         "mageplaza/core/owl.carousel": ["jquery"],
         "mageplaza/core/bootstrap": ["jquery"],
         mpIonRangeSlider: ["jquery"],
-        mpDevbridgeAutocomplete: ["jquery"] 
+        mpDevbridgeAutocomplete: ["jquery"],
+        touchPunch: ['jquery', 'jquery-ui-modules/core', 'jquery-ui-modules/mouse', 'jquery-ui-modules/widget']
     }
 };

@@ -1,4 +1,8 @@
-.page-header .panel.wrapper .header-right > * {margin-left: .875rem;}
+.page-header .panel.wrapper .header-right > * {margin-left: .875rem; list-style: none; display: contents; margin: 0; padding: 0;}
+.header.links li {margin-right: 20px;}
+li.customer-welcome {
+    margin-right: auto !important;
+}
 .page-header.type5 .main-panel-top .panel.header+.gap {height: 1.6em;margin: 0;margin-left: .875rem;opacity: 1;background: rgba(255,255,255,.09);}
 .page-header.type5 .header.panel > .header.links > li > a {padding: 0 14px;}
 .page-header.type5 .header-main .header-right {padding: 22px 0;}
